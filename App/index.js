@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import { NativeRouter, Route, Link } from 'react-router-native'
 // local imports
 import { App } from '../quark'
-import { Root } from './views'
+import Root from './Root'
 
 const Cafe = () => (
     <NativeRouter>
