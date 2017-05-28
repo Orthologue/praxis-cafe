@@ -2,17 +2,14 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 // local imports
-import { AppBar } from './components'
+import { AppBar, App } from './quark'
 
-export default class App extends React.Component {
+export default class Cafe extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
+      <App style={styles.container}>
         <AppBar />
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
+      </App>
     );
   }
 }
