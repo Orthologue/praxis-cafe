@@ -1,25 +1,15 @@
 // external imports
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { StyleSheet, Text, View } from 'react-native'
+import { NativeRouter, Route, Link } from 'react-router-native'
 // local imports
-import { AppBar, App } from './quark'
+import { App } from './quark'
+import { Root } from './views'
 
 const Cafe = () => (
-  <App>
-    <AppBar>
-      <Text>
-        hello
-      </Text>
-    </AppBar>
-    <View style={styles.content}>
-      <Text>
-        content
-      </Text>
-    </View>
-    <Text>
-      content
-    </Text>
-  </App>
+    <NativeRouter>
+      <Route path="/" component={Root} />
+    </NativeRouter>
 )
 
 const styles = StyleSheet.create({
