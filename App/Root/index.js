@@ -1,10 +1,12 @@
 // external imports
 import React from 'react'
 import { View, Text , StyleSheet} from 'react-native'
-import { Route, Switch } from 'react-router-native'
+import { Route, Switch, Redirect } from 'react-router-native'
 import { AppBar, App } from '../../quark'
 // local imports
 import TicketPanel from './TicketPanel'
+import CategoryGrid from '../CategoryGrid'
+import Editor from '../Editor'
 
 const RootView = () => (
     <App>
@@ -15,9 +17,11 @@ const RootView = () => (
         </AppBar>
         <View style={styles.content}>
             <TicketPanel />
-            <Text>
-                bello
-            </Text>
+            <Switch>
+                <Route path="/categories" component={CategoryGrid}/>
+                <Route path="/editor" component={Editor}/>
+                <Redirect to="/categories" />
+            </Switch>
         </View>
     </App>
 )
