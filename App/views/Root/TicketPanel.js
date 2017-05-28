@@ -1,7 +1,7 @@
 // external imports
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import { baseDim, grey2 } from '../../quark/styles'
+import { baseDim, grey2 } from '../../../quark/styles'
 
 const TicketPanel = () => (
     <View style={styles.container}>

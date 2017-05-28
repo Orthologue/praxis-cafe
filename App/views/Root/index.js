@@ -1,7 +1,7 @@
 // external imports
 import React from 'react'
 import { View, Text , StyleSheet} from 'react-native'
-import { AppBar, App } from '../../quark'
+import { AppBar, App } from '../../../quark'
 // local imports
 import TicketPanel from './TicketPanel'
 
