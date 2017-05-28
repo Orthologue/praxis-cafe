@@ -1,5 +1,4 @@
 // external imports
-// @flow
 import React from 'react'
 import { View, StatusBar as NativeBar, StyleSheet, Platform } from 'react-native'
 // local imports

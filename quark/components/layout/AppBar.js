@@ -5,29 +5,28 @@ import { View, StyleSheet, Text } from 'react-native'
 import StatusBar from './StatusBar'
 import { baseDim, grey2 } from '../../styles'
 
-const AppBar = () => (
+const AppBar = ({style, statusBarStyle, ...unused}) => (
     <View style={styles.container}>
-        <StatusBar/>
-        <View style={styles.appBar}>
-            <Text>
-                below bar
-            </Text>
-        </View>
+        <StatusBar style={statusBarStyle}/>
+        <View style={[styles.content, style]} {...unused}/>
     </View>
 )
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         width: '100%',
-        flexDirection: 'column',
-    },
-    appBar: {
-        height: 16 * baseDim,
         borderBottomWidth: 1,
         borderBottomColor: grey2,
         borderStyle: 'solid',
-    }
+    },
+    content: {
+        display: 'flex',
+        height: 16 * baseDim,
+        paddingLeft: 5 * baseDim,
+        paddingRight: 5 * baseDim,
+        justifyContent: 'center',
+        alignItems: 'flex-start',
+    },
 })
 
 export default AppBar

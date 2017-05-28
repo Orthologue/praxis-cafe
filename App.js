@@ -4,21 +4,28 @@ import { StyleSheet, Text, View } from 'react-native';
 // local imports
 import { AppBar, App } from './quark'
 
-export default class Cafe extends React.Component {
-  render() {
-    return (
-      <App style={styles.container}>
-        <AppBar />
-      </App>
-    );
-  }
-}
+const Cafe = () => (
+  <App>
+    <AppBar>
+      <Text>
+        hello
+      </Text>
+    </AppBar>
+    <View style={styles.content}>
+      <Text>
+        content
+      </Text>
+    </View>
+    <Text>
+      content
+    </Text>
+  </App>
+)
 
 const styles = StyleSheet.create({
-  container: {
+  content: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
   },
-});
+})
+
+export default Cafe
