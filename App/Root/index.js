@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     content: {
         display: 'flex',
         flexDirection: 'row',
-        height: '100%',
+        flexGrow: 1,
     }
 })
 
