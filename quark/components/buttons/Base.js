@@ -9,16 +9,26 @@ import { styles, containerSizes, textSizes } from './styles'
 
 class BaseButton extends React.Component {
     _pressIn() {
-        Animated.sequence([
-            Animated.timing(this.state.opacity, {
+        this.setState({
+            animation: Animated.timing(this.state.opacity, {
                 toValue: 1,
                 duration: 125,
-            }),
-            Animated.timing(this.state.opacity, {
-                toValue: 0,
-                duration: 150,
-            }),
-        ]).start()
+            })
+        }, () => {
+            // start the animation
+            this.state.animation.start()
+        })
+    }
+
+    _pressOut(){
+        // stop the keypress animation if its running
+        this.state.animation.stop()
+
+        // start the animation to return to normal state
+        Animated.timing(this.state.opacity, {
+            toValue: 0,
+            duration: 150,
+        }).start()
     }
 
     constructor(...args) {
@@ -31,17 +41,17 @@ class BaseButton extends React.Component {
 
         // function binds
         this._pressIn = this._pressIn.bind(this)
+        this._pressOut = this._pressOut.bind(this)
     }
 
     render() {
         const {style, children, size, activeColor, defaultColor, textColor, ...unused} = this.props
 
         return (
-            <TouchableWithoutFeedback onPressIn={this._pressIn}>
+            <TouchableWithoutFeedback onPressIn={this._pressIn} onPressOut={this._pressOut}>
                 <Animated.View
                     {...unused}
                     style={[
-                        style,
                         styles.container,
                         containerSizes[size],
                         {
@@ -49,7 +59,8 @@ class BaseButton extends React.Component {
                                 inputRange: [0, 1],
                                 outputRange: [defaultColor, activeColor]
                             }),
-                        }
+                        },
+                        style,
                     ]}
                 >
                     <Text

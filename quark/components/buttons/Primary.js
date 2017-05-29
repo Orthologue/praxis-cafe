@@ -1,13 +1,13 @@
 // external imports
 import React from 'react'
 // local imports
-import { primary, primaryDark } from '../../styles'
+import { primaryColor, primaryColorDark } from '../../styles'
 import BaseButton from './Base'
 
 const Button = ({...unused}) => (
     <BaseButton
-        defaultColor={primary}
-        activeColor={primaryDark}
+        defaultColor={primaryColor}
+        activeColor={primaryColorDark}
         textColor="white"
         {...unused}
     />

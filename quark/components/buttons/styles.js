@@ -34,6 +34,4 @@ export const styles = StyleSheet.create({
         borderRadius: 2,
         overflow: 'hidden',
     },
-    underlay: {
-    }
 })

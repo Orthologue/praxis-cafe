@@ -3,7 +3,7 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { baseDim, grey2 } from '../../quark/styles'
-import { Button } from '../../quark'
+import { PrimaryButton } from '../../quark'
 
 const TicketPanel = () => (
     <View style={styles.container}>
@@ -12,9 +12,9 @@ const TicketPanel = () => (
                 ticket container
             </Text>
         </View>
-        <Button style={styles.buttonContainer}>
-            button
-        </Button>
+        <PrimaryButton style={styles.buttonContainer} size="large">
+            submit
+        </PrimaryButton>
     </View>
 )
 
@@ -26,7 +26,6 @@ const styles = StyleSheet.create({
         borderRightWidth: 1,
         borderStyle: 'solid',
         paddingTop: 3 * baseDim,
-        paddingBottom: 3 * baseDim,
         flexShrink: 0,
     },
     ticketContainer: {
@@ -34,7 +33,8 @@ const styles = StyleSheet.create({
         flexGrow: 1,
     },
     buttonContainer: {
-        height: 200,
+        borderBottomLeftRadius: 0,
+        borderBottomRightRadius: 0,
     }
 })
 

@@ -1,3 +1,4 @@
 export BaseButton from './Base'
-export Button from './Primary'
-export Warning from './Warning'
+export ButtonButton from './Button'
+export WarningButton from './Warning'
+export PrimaryButton from './Primary'
