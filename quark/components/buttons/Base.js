@@ -63,14 +63,7 @@ class BaseButton extends React.Component {
                         style,
                     ]}
                 >
-                    <Text
-                        style={[
-                            textSizes[size],
-                            { color: textColor }
-                        ]}
-                    >
-                        {children}
-                    </Text>
+                    {children}
                 </Animated.View>
             </TouchableWithoutFeedback>
         )

@@ -2,11 +2,11 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 // local imports
-import { BaseButton } from '../buttons'
+import { BaseButtonWithText } from '../buttons'
 import { primaryColor, grey1, grey2 } from '../../styles'
 
 const CardAction = ({style, ...unused}) => (
-    <BaseButton
+    <BaseButtonWithText
         defaultColor="white"
         activeColor={grey1}
         textColor={primaryColor}

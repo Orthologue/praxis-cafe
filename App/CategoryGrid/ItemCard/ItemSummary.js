@@ -1,9 +1,14 @@
 // external imports
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
+import { BaseButton, grey1 } from '../../../quark'
 
 const ItemSummary = ({children: item}) => (
-    <View style={styles.container}>
+    <BaseButton
+        style={styles.container}
+        defaultColor="white"
+        activeColor={grey1}
+    >
         <View style={[styles.text, styles.number]}>
             <Text>
                 {item.number}
@@ -14,7 +19,7 @@ const ItemSummary = ({children: item}) => (
                 {item.name}
             </Text>
         </View>
-    </View>
+    </BaseButton>
 )
 
 const styles = StyleSheet.create({
