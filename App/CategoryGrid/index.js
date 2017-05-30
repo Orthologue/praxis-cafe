@@ -1,59 +1,67 @@
 // external imports
 import React from 'react'
-import { View, Text, FlatList, StyleSheet } from 'react-native'
-import { Tab, TabBar } from '../../quark'
-import { Route } from 'react-router-native'
+import { View, Text, FlatList } from 'react-native'
+import { TabBar } from '../../quark'
+import { Route, Link } from 'react-router-native'
+import { gql, graphql } from 'react-apollo'
 // local imports
 import ItemCard from './ItemCard'
+import CategoryTab from './CategoryTab'
+import styles from './styles'
 
-const CategoryGrid = ({match}) => (
+const CategoryGrid = ({data: {error, ...data}, match}) => !data.loading && (
     <View style={{flex: 1}}>
         <View style={{height: 50}}>
             <TabBar style={styles.tabBar}>
                 <FlatList
                     horizontal
                     contentContainerStyle={styles.tabBar}
-                    data={[
-                        {value: 'hello', key: 0},
-                        {value: 'goodbye', key: 1}
-                    ]}
+                    data={data.allCategories.map(value => ({value, key: value.id}))}
                     renderItem={({item:{value}}) => (
-                        <Tab>
-                            <Text>{value}</Text>
-                        </Tab>
+                        <Link to={`/categories/${value.id}`}>
+                            <View>
+                                <CategoryTab
+                                    selected={data.variables.selectedCategory === value.id}
+                                    category={value}
+                                />
+                            </View>
+                        </Link>
                     )}
                 />
             </TabBar>
         </View>
-        <FlatList
-            contentContainerStyle={styles.gridContainer}
-            data={[
-                {value: 'hello', key: 0},
-                {value: 'goodbye', key: 1},
-                {value: 'goodbye', key: 2},
-                {value: 'goodbye', key: 3},
-            ]}
-            renderItem={({item: { value }}) => (
-                <ItemCard style={styles.card}>{value}</ItemCard>
-            )}
-        />
+        {data.Category && (
+            <FlatList
+                contentContainerStyle={styles.gridContainer}
+                data={data.Category.items.map(item => ({...item, key: item.id}))}
+                renderItem={({item}) => (
+                    <ItemCard style={styles.card} item={item} />
+                )}
+            />
+        )}
     </View>
 )
 
-const styles = StyleSheet.create({
-    tabBar: {
-        flex: 1,
-    },
-    gridContainer: {
-        flex: 1,
-        flexDirection: 'row',
-        alignItems: 'flex-start',
-        flexWrap: 'wrap',
-        padding: 12,
-    },
-    card: {
-        margin: 12,
+// the component data requirements
+const query = gql`
+    query CategoryGrid($selectedCategory: ID!) {
+        allCategories {
+            id
+            ${CategoryTab.fragments.category}
+        }
+        Category(id: $selectedCategory) {
+            items {
+                id
+                ${ItemCard.fragments.item}
+            }
+        }
     }
-})
+`
 
-export default CategoryGrid
+export default graphql(query, {
+    options: ({match}) => ({
+        variables: {
+            selectedCategory: match.params.categoryName || "cj3afxsaqhkya0132ut7a1omg",
+        },
+    })
+})(CategoryGrid)

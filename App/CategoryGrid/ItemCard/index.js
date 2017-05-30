@@ -1,15 +1,16 @@
 // external imports
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import { Card, grey2, primaryColor, CardAction } from '../../../quark'
+import { Card, CardAction } from '../../../quark'
+import { gql } from 'react-apollo'
+import { createFragment } from 'apollo-client'
 // local imports
 import ItemSummary from './ItemSummary'
+import styles from './styles'
 
-const ItemCard = ({style, children, ...unused}) => (
+const ItemCard = ({style, children, item, ...unused}) => (
     <Card style={[styles.container, style]} {...unused}>
-        <ItemSummary>
-            {{number: 1, name: children}}
-        </ItemSummary>
+        <ItemSummary item={item} />
         <View style={styles.actions}>
             <CardAction>
                 special
@@ -18,34 +19,14 @@ const ItemCard = ({style, children, ...unused}) => (
     </Card>
 )
 
-const actionStyle = {
+ItemCard.fragments = {
+    item: `
+        ... on Item {
+            ${ItemSummary.fragments.item}
+        }
+    `
 }
 
-const styles = StyleSheet.create({
-    container: {
-        height: 144,
-        width: 224,
-    },
-    info: {
-        flex: 1,
-    },
-    actions: {
-        display: 'flex',
-        flexDirection: 'row',
-        height: 40,
-    },
-    actionText: {
-        color: primaryColor,
-    },
-    leftAction: {
-        ...actionStyle,
-        borderStyle: 'solid',
-        borderRightWidth: 1,
-        borderRightColor: grey2,
-    },
-    rightAction: {
-        ...actionStyle,
-    }
-})
+
 
 export default ItemCard

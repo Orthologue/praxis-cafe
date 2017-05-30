@@ -1,0 +1,55 @@
+
+## Menu Schema
+
+type Category {
+    name: String!
+
+    # items in this category
+    items: [Item!]! @relation(name: "CategoryItems")
+}
+
+type Item {
+    name: String!
+    plu: String!
+    description: String!
+
+    # categories this item belongs to
+    categories: [Category!]! @relation(name: "CategoryItems")
+
+    # standard ingredients of the item
+    ingredients: [Ingredient!]! @relation(name: "ItemIngredients")
+
+    # optional ingredients of the item
+    optionals: [Ingredient!]! @relation(name: "ItemOptionals")
+
+    # upsells
+    extras: [Item!]! @relation(name: "ItemExtras")
+}
+
+type Ingredient {
+    name: String!
+
+    # items this Ingredient is a standard member of
+    ingredientOf: [Item!]! @relation(name: "ItemIngredients")
+
+    # items this Ingredient is an optional member of
+    optionalOf: [Item!]! @relation(name: "ItemOptionals")
+}
+
+## Order Schema
+
+type Order {
+    items: [OrderItem!]!
+}
+
+type OrderItem {
+    plu: String!
+
+    # the modifacations in the item
+    ingredients [OrderIngredient!]!
+}
+
+type OrderIngredient {
+    modifier: String! # "no, light, medium, extra"
+    ingredient: Ingredient
+}

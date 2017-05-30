@@ -1,9 +1,11 @@
 // external imports
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import { BaseButton, grey1 } from '../../../quark'
+import { BaseButton, grey1 } from '../../../../quark'
+// local imports
+import styles from './styles'
 
-const ItemSummary = ({children: item}) => (
+const ItemSummary = ({item}) => (
     <BaseButton
         style={styles.container}
         defaultColor="white"
@@ -11,7 +13,7 @@ const ItemSummary = ({children: item}) => (
     >
         <View style={[styles.text, styles.number]}>
             <Text>
-                {item.number}
+                {item.plu}
             </Text>
         </View>
         <View style={[styles.text, styles.name]}>
@@ -22,24 +24,13 @@ const ItemSummary = ({children: item}) => (
     </BaseButton>
 )
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        flexDirection: 'row',
-        alignItems: 'center',
-    },
-    text: {
-        width: 10,
-        flex: 1,
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-    },
-    number: {
-    },
-    name: {
-        justifyContent: 'flex-start',
-    },
-})
+ItemSummary.fragments = {
+    item: `
+        ... on Item {
+            plu
+            name
+        }
+    `
+}
 
 export default ItemSummary
