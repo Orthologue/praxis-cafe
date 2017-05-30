@@ -22,7 +22,7 @@ class BaseButton extends React.Component {
 
     _pressOut(){
         // stop the keypress animation if its running
-        this.state.animation.stop()
+        // this.state.animation.stop()
 
         // start the animation to return to normal state
         Animated.timing(this.state.opacity, {

@@ -1,67 +1,81 @@
 // external imports
-import React from 'react'
-import { View, Text, FlatList } from 'react-native'
+import React, { PureComponent } from 'react'
+import { View, Text, FlatList, ScrollView } from 'react-native'
 import { TabBar } from '../../quark'
 import { Route, Link } from 'react-router-native'
 import { gql, graphql } from 'react-apollo'
+import { TabViewAnimated } from 'react-native-tab-view'
 // local imports
 import ItemCard from './ItemCard'
-import CategoryTab from './CategoryTab'
 import styles from './styles'
 
-const CategoryGrid = ({data: {error, ...data}, match}) => !data.loading && (
-    <View style={{flex: 1}}>
-        <View style={{height: 50}}>
-            <TabBar style={styles.tabBar}>
-                <FlatList
-                    horizontal
-                    contentContainerStyle={styles.tabBar}
-                    data={data.allCategories.map(value => ({value, key: value.id}))}
-                    renderItem={({item:{value}}) => (
-                        <Link to={`/categories/${value.id}`}>
-                            <View>
-                                <CategoryTab
-                                    selected={data.variables.selectedCategory === value.id}
-                                    category={value}
-                                />
-                            </View>
-                        </Link>
-                    )}
+
+class CategoryGrid extends PureComponent {
+    state = {
+        index: 0,
+    }
+
+    constructor(...args) {
+        super(...args)
+        this._renderScene = this._renderScene.bind(this)
+    }
+
+    _handleChangeTab = index => this.setState({ index })
+
+    _renderHeader = props => <TabBar {...props} />
+
+    _renderScene = props => {
+        // the category we are looking at
+        const categoryId = props.route.key
+
+        // find the matching category
+        const category = this.props.data.allCategories.find(category => category.id === categoryId)
+
+        return (
+            <ScrollView style={styles.gridContainer} key={categoryId}>
+                {category.items.map(item => <ItemCard item={item} style={styles.card}/>)}
+            </ScrollView>
+        )
+    }
+
+    get _routes() {
+        const { data } = this.props
+
+        return data.allCategories.map(category => ({
+            key: category.id,
+            title: category.name,
+        }))
+    }
+
+    render() {
+        const { data } = this.props
+
+        return data.loading ? <Text>loading...</Text> : (
+                <TabViewAnimated
+                    style={styles.container}
+                    navigationState={{
+                        ...this.state,
+                        routes: this._routes,
+                    }}
+                    renderScene={this._renderScene}
+                    renderHeader={this._renderHeader}
+                    onRequestChangeTab={this._handleChangeTab}
                 />
-            </TabBar>
-        </View>
-        {data.Category && (
-            <FlatList
-                contentContainerStyle={styles.gridContainer}
-                data={data.Category.items.map(item => ({...item, key: item.id}))}
-                renderItem={({item}) => (
-                    <ItemCard style={styles.card} item={item} />
-                )}
-            />
-        )}
-    </View>
-)
+            )
+    }
+}
 
 // the component data requirements
 const query = gql`
-    query CategoryGrid($selectedCategory: ID!) {
-        allCategories {
+    query CategoryGrid {
+        allCategories(orderBy: name_DESC) {
             id
-            ${CategoryTab.fragments.category}
-        }
-        Category(id: $selectedCategory) {
+            name
             items {
-                id
                 ${ItemCard.fragments.item}
             }
         }
     }
 `
 
-export default graphql(query, {
-    options: ({match}) => ({
-        variables: {
-            selectedCategory: match.params.categoryName || "cj3afxsaqhkya0132ut7a1omg",
-        },
-    })
-})(CategoryGrid)
+export default graphql(query)(CategoryGrid)

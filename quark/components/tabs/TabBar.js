@@ -1,21 +1,38 @@
 // external imports
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
+import { TabBar as NativeBar } from 'react-native-tab-view'
 // local imports
-import { baseDim } from '../../styles'
+import { baseDim, grey5, primaryColor } from '../../styles'
 
-const Tab = ({style, ...unused}) => (
-    <View style={[styles.container, style]} {...unused} />
+const TabBar = ({style, ...unused}) => (
+    <NativeBar
+        style={[styles.container, style]}
+        labelStyle={styles.label}
+        tabStyle={styles.tab}
+        indicatorStyle={styles.indicator}
+        getLabelText={({route}) => route.title }
+        {...unused}
+    />
 )
 
 const styles = StyleSheet.create({
     container: {
-        display: 'flex',
-        flexDirection: 'row',
         paddingLeft: 4 * baseDim,
         paddingTop: 4 * baseDim,
         paddingRight: 4 * baseDim,
+        backgroundColor: 'rgba(0,0,0,0)',
+        shadowOpacity: 0,
+    },
+    label: {
+        color: grey5,
+    },
+    tab: {
+        flexGrow: 0,
+    },
+    indicator: {
+        backgroundColor: primaryColor,
     }
 })
 
-export default Tab
+export default TabBar

@@ -1,5 +1,7 @@
 // external imports
 import { StyleSheet } from 'react-native'
+// local import
+import { primaryColor } from '../../../../quark'
 
 export default StyleSheet.create({
     container: {
@@ -19,4 +21,6 @@ export default StyleSheet.create({
     name: {
         justifyContent: 'flex-start',
     },
+    nameText: {
+    }
 })

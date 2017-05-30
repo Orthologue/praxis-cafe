@@ -2,14 +2,14 @@
 import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
+    container: {
+        display: 'flex',
+        marginBottom: 182,
+    },
     tabBar: {
         flex: 1,
     },
     gridContainer: {
-        flex: 1,
-        flexDirection: 'row',
-        alignItems: 'flex-start',
-        flexWrap: 'wrap',
         padding: 12,
     },
     card: {

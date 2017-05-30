@@ -1,6 +1,7 @@
 // external imports
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
+import { Link } from 'react-router-native'
 import { Card, CardAction } from '../../../quark'
 import { gql } from 'react-apollo'
 import { createFragment } from 'apollo-client'
