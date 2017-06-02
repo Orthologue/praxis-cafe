@@ -22,7 +22,7 @@ const CategoryGrid = ({style, data, ...rest}) => data.loading ? <Text>loading...
                     {rows.map((row, rowIdx) => (
                         <View style={styles.row} key={rowIdx}>
                             {[
-                                ...row.map(item => <ItemCard item={item} key={item.id} style={styles.card}/>),
+                                ...row.map(item => <ItemCard item={item} key={item.id} style={styles.card} category={category}/>),
                                 ...Array.apply(null, {length: 3 - row.length}).map(Number.call, Number).map(
                                     (_, i) => (
                                         <View style={[styles.placeholder, styles.card]} key={`${rowIdx}:${i}`}>
