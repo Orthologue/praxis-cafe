@@ -10,34 +10,38 @@ import _ from 'lodash'
 import ItemCard from './ItemCard'
 import styles from './styles'
 
-const CategoryGrid = ({style, data, ...rest}) => data.loading ? <Text>loading...</Text> : (
-    <TabView data={data.allCategories.map(cat => ({...cat, key: cat.name}))} numTabs={1}>
-        {/* the page for each category */}
-        {(category) => {
-            // we're showing rows of 3
-            const rows = _.chunk(category.items, 3)
+const CategoryGrid = ({style, data, ...rest}) => {
+    // if we are still loading the list
+    if (data.loading) {
+        // return the loading indicator
+        return <Text>loading...</Text>
+    }
 
-            return (
-                <ScrollView style={styles.gridContainer} key={category.id}>
+    // chunk the data into rows once
+    const categories = data.allCategories.map(cat => ({key: cat.name, rows: _.chunk(cat.items, 3)}))
+
+    return (
+        <TabView data={categories} numTabs={1}>
+            {/* the page for each category */}
+            {({rows, key}) => (
+                <ScrollView style={styles.gridContainer} key={key}>
                     {rows.map((row, rowIdx) => (
                         <View style={styles.row} key={rowIdx}>
                             {[
                                 ...row.map(item => <ItemCard item={item} key={item.id} style={styles.card}/>),
                                 ...Array.apply(null, {length: 3 - row.length}).map(Number.call, Number).map(
                                     (_, i) => (
-                                        <View style={[styles.placeholder, styles.card]} key={`${rowIdx}:${i}`}>
-
-                                        </View>
+                                        <View style={[styles.placeholder, styles.card]} key={`${rowIdx}:${i}`}/>
                                     )
                                 )
                             ]}
                         </View>
                     ))}
                 </ScrollView>
-            )
-        }}
-    </TabView>
-)
+            )}
+        </TabView>
+    )
+}
 
 // the component data requirements
 const query = gql`

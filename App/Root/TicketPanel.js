@@ -1,17 +1,17 @@
 // external imports
 // @flow
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, ScrollView, Text, StyleSheet } from 'react-native'
 import { baseDim, grey2 } from '../../quark/styles'
 import { PrimaryButton } from '../../quark'
 
 const TicketPanel = () => (
     <View style={styles.container}>
-        <View style={styles.ticketContainer}>
+        <ScrollView style={styles.ticketContainer}>
             <Text>
                 ticket container
             </Text>
-        </View>
+        </ScrollView>
         <PrimaryButton style={styles.buttonContainer} size="large">
             submit
         </PrimaryButton>

@@ -5,11 +5,12 @@ import { BaseButton, grey1, primaryColor } from '../../../../quark'
 // local imports
 import styles from './styles'
 
-const ItemSummary = ({item}) => (
+const ItemSummary = ({item, ...unused}) => (
     <BaseButton
         style={styles.container}
         defaultColor="white"
         activeColor={grey1}
+        {...unused}
     >
         <View style={[styles.text, styles.number]}>
             <Text>
