@@ -2,7 +2,8 @@
 import React from 'react'
 import { View, Text , StyleSheet} from 'react-native'
 import { Route, Switch, Redirect } from 'react-router-native'
-import { AppBar, App } from '../../quark'
+import { App } from '../../quark'
+import { AppBar } from '../../quark/native'
 // local imports
 import { Provider } from '../../store'
 import TicketPanel from './TicketPanel'

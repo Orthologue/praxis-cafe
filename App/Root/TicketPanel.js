@@ -21,6 +21,7 @@ const TicketPanel = () => (
 const styles = StyleSheet.create({
     container: {
         display: 'flex',
+        flexDirection: 'column',
         width: 62 * baseDim,
         borderRightColor: grey2,
         borderRightWidth: 1,
@@ -31,10 +32,12 @@ const styles = StyleSheet.create({
     ticketContainer: {
         display: 'flex',
         flexGrow: 1,
+        height: 500,
     },
     buttonContainer: {
         borderBottomLeftRadius: 0,
         borderBottomRightRadius: 0,
+        display: 'flex',
     }
 })
 

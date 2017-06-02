@@ -8,7 +8,12 @@ import { styles, containerSizes, textSizes } from './styles'
 
 
 class BaseButton extends React.Component {
-    _pressIn() {
+    _pressIn(...args) {
+        // if there is a press handler to deal with
+        if (this.props.onPressIn) {
+            // call it
+            this.props.onPressIn()
+        }
         this.setState({
             animation: Animated.timing(this.state.opacity, {
                 toValue: 1,
@@ -45,7 +50,7 @@ class BaseButton extends React.Component {
     }
 
     render() {
-        const {style, children, size, activeColor, defaultColor, textColor, ...unused} = this.props
+        const {style, children, size, activeColor, defaultColor, textColor, onPress, ...unused} = this.props
 
         return (
             <TouchableWithoutFeedback onPressIn={this._pressIn} onPressOut={this._pressOut}>

@@ -2,7 +2,7 @@
 import React from 'react'
 import { View, StyleSheet, Text } from 'react-native'
 // local imports
-import StatusBar from './StatusBar'
+import { StatusBar } from '.'
 import { baseDim, grey2 } from '../../styles'
 
 const AppBar = ({style, statusBarStyle, ...unused}) => (

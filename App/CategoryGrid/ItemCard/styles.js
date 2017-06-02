@@ -5,7 +5,7 @@ import { grey2, primaryColor } from '../../../quark'
 export default StyleSheet.create({
     container: {
         height: 124,
-        width: 224,
+        flex: 1,
     },
     info: {
         flex: 1,

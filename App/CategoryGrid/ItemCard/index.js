@@ -9,16 +9,23 @@ import { createFragment } from 'apollo-client'
 import ItemSummary from './ItemSummary'
 import styles from './styles'
 
-const ItemCard = ({style, children, item, ...unused}) => (
-    <Card style={[styles.container, style]} {...unused}>
-        <ItemSummary item={item} />
-        <View style={styles.actions}>
-            <CardAction>
-                special
-            </CardAction>
-        </View>
-    </Card>
-)
+class ItemCard extends React.Component {
+    render() {
+        // grab used components
+        const {style, children, item, ...unused} = this.props
+
+        return (
+            <Card style={[styles.container, style]} {...unused}>
+                <ItemSummary item={item} />
+                <View style={styles.actions}>
+                    <CardAction>
+                        special
+                    </CardAction>
+                </View>
+            </Card>
+        )
+    }
+}
 
 ItemCard.fragments = {
     item: `

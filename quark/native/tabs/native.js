@@ -12,6 +12,7 @@ const TabBar = ({style, ...unused}) => (
         tabStyle={styles.tab}
         indicatorStyle={styles.indicator}
         getLabelText={({route}) => route.title }
+        scrollEnabled={true}
         {...unused}
     />
 )
@@ -23,6 +24,8 @@ const styles = StyleSheet.create({
         paddingRight: 4 * baseDim,
         backgroundColor: 'rgba(0,0,0,0)',
         shadowOpacity: 0,
+        width: '100%',
+        height: 52,
     },
     label: {
         color: grey5,
