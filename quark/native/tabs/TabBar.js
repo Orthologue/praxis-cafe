@@ -28,7 +28,7 @@ class TabBar extends React.Component {
     }
 
     render() {
-        const {style, children, numTabs, selectTab, ...unused} = this.props
+        const {style, children, numTabs, selectTab, selected, ...unused} = this.props
 
         return (
             <View style={[styles.container, style]} onLayout={this._onLayout}>
@@ -36,12 +36,14 @@ class TabBar extends React.Component {
                     horizontal
                     showsHorizontalScrollIndicator={false}
                     data={children}
-                    renderItem={({item: { key }}) => (
+                    extraData={selected}
+                    renderItem={({item: { key }, index}) => (
                         <Button
                             style={[{ width: this.state.tabWidth }, styles.tab]}
                             onPress={() => selectTab(key)}
+                            disabled={index === selected}
                         >
-                            <Text style={styles.tabText}>
+                            <Text style={[styles.tabText, index === selected && styles.selectedTab]}>
                                 {key}
                             </Text>
                         </Button>
@@ -76,7 +78,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    tabText: {
+    selectedTab: {
+        color: primaryColor,
     }
 })
 
