@@ -1,14 +1,14 @@
 // external imports
 import React from 'react'
 // local imports
-import { red, darkRed } from '../../styles'
+import { grey1, grey5 } from '../../styles'
 import BaseWithText from './Text'
 
 const Button = ({...unused}) => (
     <BaseWithText
-        defaultColor={red}
-        activeColor={darkRed}
-        textColor="white"
+        defaultColor="white"
+        activeColor={grey1}
+        textColor={grey5}
         {...unused}
     />
 )

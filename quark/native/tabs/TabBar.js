@@ -2,6 +2,7 @@
 import React from 'react'
 import { ScrollView, View, StyleSheet, Text, FlatList } from 'react-native'
 // local imports
+import { Button } from '../../components'
 import { baseDim, grey5, primaryColor } from '../../styles'
 
 // the margin between tabs
@@ -10,7 +11,7 @@ const tabMargin = 12
 
 class TabBar extends React.Component {
     state = {
-        tabWidth: null
+        tabWidth: null,
     }
 
     // we wait a frame before showing the tab bar to calculate the layout
@@ -27,7 +28,7 @@ class TabBar extends React.Component {
     }
 
     render() {
-        const {style, children, numTabs, ...unused} = this.props
+        const {style, children, numTabs, selectTab, ...unused} = this.props
 
         return (
             <View style={[styles.container, style]} onLayout={this._onLayout}>
@@ -36,9 +37,14 @@ class TabBar extends React.Component {
                     showsHorizontalScrollIndicator={false}
                     data={children}
                     renderItem={({item: { key }}) => (
-                        <View key={key} style={[{ width: this.state.tabWidth }, styles.tab]}>
-                            <Text>{key}</Text>
-                        </View>
+                        <Button
+                            style={[{ width: this.state.tabWidth }, styles.tab]}
+                            onPress={() => selectTab(key)}
+                        >
+                            <Text style={styles.tabText}>
+                                {key}
+                            </Text>
+                        </Button>
                     )}
                     {...unused}
                 />}
@@ -53,7 +59,7 @@ class TabBar extends React.Component {
 }
 
 TabBar.defaultProps = {
-    numTabs: 4,
+    numTabs: 5,
 }
 
 const styles = StyleSheet.create({
@@ -62,12 +68,15 @@ const styles = StyleSheet.create({
         height: 64,
         alignItems: 'center',
         justifyContent: 'center',
+        position: 'relative',
     },
     tab: {
         height: '100%',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    tabText: {
     }
 })
 

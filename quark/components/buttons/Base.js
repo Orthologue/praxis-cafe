@@ -12,7 +12,7 @@ class BaseButton extends React.Component {
         // if there is a press handler to deal with
         if (this.props.onPressIn) {
             // call it
-            this.props.onPressIn()
+            this.props.onPressIn(...arg)
         }
         this.setState({
             animation: Animated.timing(this.state.opacity, {
@@ -25,9 +25,13 @@ class BaseButton extends React.Component {
         })
     }
 
-    _pressOut(){
+    _pressOut(...arg){
         // stop the keypress animation if its running
-        // this.state.animation.stop()
+        // if there is a press handler to deal with
+        if (this.props.onPressOut) {
+            // call it
+            this.props.onPressOut(...arg)
+        }
 
         // start the animation to return to normal state
         Animated.timing(this.state.opacity, {
@@ -53,7 +57,7 @@ class BaseButton extends React.Component {
         const {style, children, size, activeColor, defaultColor, textColor, onPress, ...unused} = this.props
 
         return (
-            <TouchableWithoutFeedback onPressIn={this._pressIn} onPressOut={this._pressOut}>
+            <TouchableWithoutFeedback onPressIn={this._pressIn} onPressOut={this._pressOut} onPress={onPress}>
                 <Animated.View
                     {...unused}
                     style={[

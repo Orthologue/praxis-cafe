@@ -12,23 +12,28 @@ import styles from './styles'
 
 const CategoryGrid = ({style, data, ...rest}) => data.loading ? <Text>loading...</Text> : (
     <TabView data={data.allCategories.map(cat => ({...cat, key: cat.name}))} numTabs={1}>
+        {/* the page for each category */}
         {(category) => {
             // we're showing rows of 3
             const rows = _.chunk(category.items, 3)
 
             return (
-                <View style={styles.row} key={rowIdx}>
-                    {[
-                        ...row.map(item => <ItemCard item={item} key={item.id} style={styles.card}/>),
-                        ...Array.apply(null, {length: 3 - row.length}).map(Number.call, Number).map(
-                            (_, i) => (
-                                <View style={[styles.placeholder, styles.card]} key={`${rowIdx}:${i}`}>
-                                    {console.log(i)}
-                                </View>
-                            )
-                        )
-                    ]}
-                </View>
+                <ScrollView style={styles.gridContainer} key={category.id}>
+                    {rows.map((row, rowIdx) => (
+                        <View style={styles.row} key={rowIdx}>
+                            {[
+                                ...row.map(item => <ItemCard item={item} key={item.id} style={styles.card}/>),
+                                ...Array.apply(null, {length: 3 - row.length}).map(Number.call, Number).map(
+                                    (_, i) => (
+                                        <View style={[styles.placeholder, styles.card]} key={`${rowIdx}:${i}`}>
+
+                                        </View>
+                                    )
+                                )
+                            ]}
+                        </View>
+                    ))}
+                </ScrollView>
             )
         }}
     </TabView>
