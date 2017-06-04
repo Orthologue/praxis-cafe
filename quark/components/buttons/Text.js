@@ -5,12 +5,13 @@ import { Text } from 'react-native'
 import Base from './Base'
 import {textSizes} from './styles'
 
-const ButtonWithText = ({size, textColor, children, ...unused}) => (
+const ButtonWithText = ({size, textColor, textStyle, children, ...unused}) => (
     <Base size={size} {...unused}>
         <Text
             style={[
                 textSizes[size],
-                { color: textColor }
+                { color: textColor },
+                textStyle,
             ]}
         >
             {children}

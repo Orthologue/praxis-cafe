@@ -5,20 +5,21 @@ import { connect } from 'react-redux'
 import { graphql, gql } from 'react-apollo'
 // local imports
 import styles from './styles'
-import { Breadcrumbs, Button } from '../../quark/components'
+import { Breadcrumbs, BreadcrumbChild } from '../../quark/components'
 
-const ItemEditor = ({data, closeEditor}) => data.loading ? (
+const ItemEditor = ({data, fromCategory, closeEditor}) => data.loading ? (
     <View style={{flex: 1, backgroundColor: 'white', justifyContent: 'center', alignItems: 'center'}}>
         <Text> loading... </Text>
     </View>
 ) : (
     <ScrollView style={styles.container}>
-        <Button onPress={closeEditor}>
-            hello
-        </Button>
         <Breadcrumbs>
-            <Text>hello</Text>
-            <Text>hello</Text>
+            <BreadcrumbChild onPress={closeEditor}>
+                {fromCategory}
+            </BreadcrumbChild>
+            <BreadcrumbChild active={true}>
+                {data.item.name}
+            </BreadcrumbChild>
         </Breadcrumbs>
     </ScrollView>
 )
@@ -26,7 +27,7 @@ const ItemEditor = ({data, closeEditor}) => data.loading ? (
 
 const query = gql`
     query ItemEditor($itemId: ID!) {
-        Item(id: $itemId) {
+        item: Item(id: $itemId) {
             name
         }
     }

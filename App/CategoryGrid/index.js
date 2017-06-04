@@ -22,7 +22,7 @@ class CategoryGrid extends React.Component {
         viewport: {},
     }
 
-    _openEditor(id, origin) {
+    _openEditor({id, origin, category}) {
         // get the used params
         const { viewport } = this.state
 
@@ -39,6 +39,7 @@ class CategoryGrid extends React.Component {
             showEditor: true,
             origin: relOrigin,
             selectedItem: id,
+            selectedCategory: category,
             modal: {
                 x: new Animated.Value(relOrigin.x),
                 y: new Animated.Value(relOrigin.y),
@@ -143,7 +144,13 @@ class CategoryGrid extends React.Component {
                                     <View style={styles.row} key={rowIdx}>
                                         {[
                                             ...row.map(item => (
-                                                <ItemCard item={item} key={item.id} style={styles.card} openEditor={this._openEditor}/>
+                                                <ItemCard
+                                                    item={item}
+                                                    key={item.id}
+                                                    style={styles.card}
+                                                    openEditor={this._openEditor}
+                                                    category={key}
+                                                />
                                             )),
                                             ...Array.apply(null, {length: 3 - row.length}).map(Number.call, Number).map(
                                                 (_, i) => (
@@ -170,7 +177,11 @@ class CategoryGrid extends React.Component {
                             position: 'absolute',
                         }}
                     >
-                        <Editor closeEditor={this._closeEditor} itemId={this.state.selectedItem}/>
+                        <Editor
+                            closeEditor={this._closeEditor}
+                            itemId={this.state.selectedItem}
+                            fromCategory={this.state.selectedCategory}
+                        />
                     </Animated.View>
                 )}
             </View>
