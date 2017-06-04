@@ -3,7 +3,7 @@ import React from 'react'
 import { View, Text , StyleSheet} from 'react-native'
 import { Route, Switch, Redirect } from 'react-router-native'
 import { connect } from 'react-redux'
-import { App } from '../../quark'
+import { App, H3 } from '../../quark'
 import { AppBar } from '../../quark/native'
 // local imports
 import { Provider } from '../../store'
@@ -23,9 +23,9 @@ const RootView = connect(selector)(({view = {}}) => {
         <Provider>
             <App>
                 <AppBar style={styles.appBar}>
-                    <Text>
-                        hello
-                    </Text>
+                    <H3 style={styles.appName}>
+                        Café
+                    </H3>
                 </AppBar>
                 <View style={styles.content}>
                     <TicketPanel />
