@@ -2,12 +2,13 @@
 import React, { PureComponent } from 'react'
 import { View, Text, StyleSheet, TouchableWithoutFeedback, Modal, Animated, ScrollView } from 'react-native'
 import { Link } from 'react-router-native'
-import { Card, CardAction, Button } from '../../../quark'
+import { Card, CardAction } from '../../../quark'
 import { gql } from 'react-apollo'
 import { createFragment } from 'apollo-client'
 // local imports
 import ItemSummary from './ItemSummary'
 import styles from './styles'
+import { setView } from '../../../store'
 
 const animationDuration = 100
 
@@ -46,11 +47,10 @@ class ItemCard extends PureComponent {
 ItemCard.fragments = {
     item: `
         ... on Item {
+            id
             ${ItemSummary.fragments.item}
         }
     `
 }
-
-
 
 export default ItemCard
