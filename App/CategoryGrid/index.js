@@ -11,7 +11,7 @@ import _ from 'lodash'
 import ItemCard from './ItemCard'
 import styles from './styles'
 
-const animationDuration = 100
+const animationDuration = 150
 
 class CategoryGrid extends React.Component {
     state = {
