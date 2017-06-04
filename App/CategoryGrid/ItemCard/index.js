@@ -12,18 +12,16 @@ import styles from './styles'
 const animationDuration = 100
 
 class ItemCard extends PureComponent {
-    state = {
-        layout: {},
-    }
-
-    componentDidMount() {
-        setTimeout(() => {
-            this._root.measure((_, __, width, height, x, y) => {
-                this.setState({
-                    layout: { x, y, width, height },
-                })
+    _onPress() {
+        this._root.measure((_, __, width, height, x, y) => {
+            this.props.openEditor({
+                width,
+                height,
+                x,
+                y
             })
-        }, 0)
+        })
+
     }
 
     render() {
@@ -36,7 +34,7 @@ class ItemCard extends PureComponent {
                     <ItemSummary item={item}/>
                 </View>
                 <View style={styles.actions}>
-                    <CardAction onPress={() => openEditor(this.state.layout)} >
+                    <CardAction onPress={this._onPress.bind(this)} >
                         special
                     </CardAction>
                 </View>
