@@ -17,23 +17,25 @@ class TabView extends React.Component {
         selected: 2
     }
 
-    _selectTab(key) {
-        // the index of the matching data
-        let index
+    constructor(props, ...args) {
+        // instantiate this
+        super(props, ...args)
+        // we need to cache category key lookup
+        this._keyCache = {}
 
         // look for the tab with the matching key
-        for (const i = 0; i < this.props.data.length ; i++) {
-            // if we found the match
-            if (this.props.data[i].key === key) {
-                // save the index
-                index = i
-                // we're done with the loop
-                break
-            }
-        }
+        for (const i = 0; i < props.data.length ; i++) {
+            // the data point
+            const datum = props.data[i]
 
+            // save the index of the key
+            this._keyCache[datum.key] = i
+        }
+    }
+
+    _selectTab(key) {
         // keep track of the new selection
-        this.setState({selected: index})
+        this.setState({selected: this._keyCache[key]})
     }
 
     render() {

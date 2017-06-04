@@ -3,8 +3,7 @@ import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
     container: {
-        display: 'flex',
-        marginBottom: 16,
+        position: 'relative',
     },
     tabBar: {
         flex: 1,
@@ -22,5 +21,8 @@ export default StyleSheet.create({
     },
     placeholder: {
         flex: 1,
+    },
+    modal: {
+        position: 'absolute',
     }
 })

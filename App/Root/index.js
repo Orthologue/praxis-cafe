@@ -16,7 +16,6 @@ const selector = ({app: { view }}) => ({view})
 const RootView = connect(selector)(({view = {}}) => {
     // the component to show depends on the view path
     const Component = {
-        'editor': Editor,
     // the default view is the grid
     }[view.path] || CategoryGrid
 
