@@ -15,7 +15,7 @@ const animationDuration = 100
 class ItemCard extends PureComponent {
     _onPress() {
         this._root.measure((_, __, width, height, x, y) => {
-            this.props.openEditor({
+            this.props.openEditor(this.props.item.id, {
                 width,
                 height,
                 x,

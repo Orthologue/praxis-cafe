@@ -8,6 +8,7 @@ import { gql, graphql } from 'react-apollo'
 import { TabViewAnimated } from 'react-native-tab-view'
 import _ from 'lodash'
 // local imports
+import Editor from '../Editor'
 import ItemCard from './ItemCard'
 import styles from './styles'
 
@@ -21,7 +22,7 @@ class CategoryGrid extends React.Component {
         viewport: {},
     }
 
-    _openEditor(origin) {
+    _openEditor(id, origin) {
         // get the used params
         const { viewport } = this.state
 
@@ -31,11 +32,13 @@ class CategoryGrid extends React.Component {
             y: origin.y - 64,
             height: origin.height,
             width: origin.width,
+            selectedItem: id,
         }
 
         this.setState({
             showEditor: true,
             origin: relOrigin,
+            selectedItem: id,
             modal: {
                 x: new Animated.Value(relOrigin.x),
                 y: new Animated.Value(relOrigin.y),
@@ -155,20 +158,20 @@ class CategoryGrid extends React.Component {
                     </TabView>
                 )}
                 {this.state.showEditor && (
-                    <Animated.ScrollView
+                    <Animated.View
                         style={{
                             width: this.state.modal.width,
                             height: this.state.modal.height,
                             top: this.state.modal.y,
                             left: this.state.modal.x,
+                            bottom: 0,
+                            right: 0,
+                            display: 'flex',
                             position: 'absolute',
-                            backgroundColor: 'red',
                         }}
                     >
-                        <Button onPress={this._closeEditor}>
-                            close
-                        </Button>
-                    </Animated.ScrollView>
+                        <Editor closeEditor={this._closeEditor} itemId={this.state.selectedItem}/>
+                    </Animated.View>
                 )}
             </View>
         )
