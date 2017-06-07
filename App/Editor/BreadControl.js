@@ -5,14 +5,28 @@ import { connect } from 'react-redux'
 import { graphql, gql } from 'react-apollo'
 // local imports
 import {
-    H3,
+    H3, Text, Checkbox,
 } from '../../quark/components'
+import { primaryColor } from '../../quark/styles'
 
 const BreadControl = ({item}) => (
     <View style={styles.container}>
         <H3>
             Bread
         </H3>
+        <View style={styles.choices}>
+            {item.bread.map((bread, i) => (
+                <Checkbox
+                    key={i}
+                    style={styles.checkbox}
+                    content={
+                        <Text style={styles.text}>{bread}</Text>
+                    }
+                >
+                    {i === 0}
+                </Checkbox>
+            ))}
+        </View>
     </View>
 )
 
@@ -20,6 +34,13 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: 'white',
+    },
+    choices: {
+        display: 'flex',
+        flexDirection: 'row',
+    },
+    checkbox: {
+        marginRight: 12,
     },
 })
 

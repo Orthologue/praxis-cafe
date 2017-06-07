@@ -41,7 +41,7 @@ export const subtitle = StyleSheet.create({
     marginBottom: 1 * baseDim,
 })
 
-export const text = StyleSheet.create({
+export const copy = StyleSheet.create({
     ...primaryFont,
     fontSize: 14,
 })
