@@ -1,0 +1,60 @@
+# project: cj3afpdrhkzih0182a4655f0e
+# version: 16
+
+type Category implements Node {
+  createdAt: DateTime!
+  id: ID! @isUnique
+  name: String!
+  updatedAt: DateTime!
+  items: [Item!]! @relation(name: "CategoryItems")
+}
+
+type Item implements Node {
+  name: String!
+  plu: String!
+  description: String!
+  bread: [String!]
+  salad: [String!] @migrationValue(value: [])
+  temperature: MeatTemperature
+  extra: [Item!]! @relation(name: "ItemExtras")
+  ingredients: [Ingredient!]! @relation(name: "ItemIngredients")
+  optionals: [Ingredient!]! @relation(name: "ItemOptionals")
+  categories: [Category!]! @relation(name: "CategoryItems")
+  createdAt: DateTime!
+  id: ID! @isUnique
+  updatedAt: DateTime!
+}
+
+type Ingredient implements Node {
+  name: String!
+  createdAt: DateTime!
+  igredientOf: [Item!]! @relation(name: "ItemIngredients")
+  optionalOf: [Item!]! @relation(name: "ItemOptionals")
+  id: ID! @isUnique
+  updatedAt: DateTime!
+}
+
+type File implements Node {
+  contentType: String!
+  createdAt: DateTime!
+  id: ID! @isUnique
+  name: String!
+  secret: String! @isUnique
+  size: Int!
+  updatedAt: DateTime!
+  url: String! @isUnique
+}
+
+type User implements Node {
+  createdAt: DateTime!
+  id: ID! @isUnique
+  updatedAt: DateTime!
+}
+
+enum MeatTemperature {
+  WELL
+  MEDIUM_WELL
+  MEDIUM
+  MEDIUM_RARE
+  RARE
+}

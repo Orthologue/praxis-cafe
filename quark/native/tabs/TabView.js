@@ -14,7 +14,7 @@ class TabView extends React.Component {
 
     state = {
         // the current selection
-        selected: 2
+        selected: 0
     }
 
     constructor(props, ...args) {

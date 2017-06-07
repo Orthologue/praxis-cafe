@@ -21,7 +21,7 @@ export const grey5 = '#48484D'
 
 // other colors
 export const clementine = '#FFAE00'
-export const supportClementine = '#FFF5E3'
+export const supportClementine = '#FFEAC9'
 
 // branding
 export const primaryColor = clementine
