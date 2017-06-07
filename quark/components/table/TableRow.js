@@ -12,8 +12,8 @@ export const styles = StyleSheet.create({
     container: {
         display: 'flex',
         flexDirection: 'row',
-        paddingTop: baseDim,
-        paddingBottom: baseDim,
+        paddingTop: 2 * baseDim,
+        paddingBottom: 2 * baseDim,
         borderBottomWidth: 1,
         borderColor: grey2,
     },

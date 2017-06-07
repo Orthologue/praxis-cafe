@@ -10,8 +10,8 @@ import {
     Table, TableHeader, TableHeaderCell, TableHeaderRow, TableRow, TableCell,
 } from '../../quark/components'
 
-const ItemIngredientSummary = ({item}) => (
-    <View style={styles.container}>
+const ItemIngredientSummary = ({item, ...unused}) => (
+    <View style={styles.container} {...unused}>
         <H3>
             Ingredients
         </H3>
@@ -46,7 +46,7 @@ const ItemIngredientSummary = ({item}) => (
         {item.ingredients.map((ingredient, i) => (
             <TableRow key={ingredient.id} last={i === item.ingredients.length - 1}>
                 <TableCell style={styles.rowLabel}>
-                    <Subtitle style={{fontSize: 18}}>
+                    <Subtitle style={{fontSize: 16, margin: 0, marginBottom: 0,}}>
                         {ingredient.name}
                     </Subtitle>
                 </TableCell>

@@ -27,11 +27,14 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     withContent: {
-        padding: 8,
+        paddingTop: 4,
+        paddingBottom: 4,
+        paddingLeft: 8,
+        paddingRight: 8,
     },
     withoutContent: {
-        height: 40,
-        width: 40,
+        height: 36,
+        width: 36,
     },
     active: {
         backgroundColor: secondaryColor,

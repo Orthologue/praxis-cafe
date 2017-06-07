@@ -24,9 +24,11 @@ export default StyleSheet.create({
         alignItems: 'center',
     },
     content: {
-        paddingTop: 16,
-        paddingBottom: 16,
-        paddingLeft: 32,
-        paddingRight: 32,
-    }
+        flexShrink: 0,
+        flex: 1,
+    },
+    control: {
+        marginBottom: 12,
+        flexShrink: 0,
+    },
 })
