@@ -28,7 +28,7 @@ export default StyleSheet.create({
         flex: 1,
     },
     control: {
-        marginBottom: 12,
+        marginBottom: 32,
         flexShrink: 0,
     },
 })

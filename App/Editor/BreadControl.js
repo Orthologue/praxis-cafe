@@ -9,10 +9,10 @@ import {
 } from '../../quark/components'
 import { primaryColor } from '../../quark/styles'
 
-const BreadControl = ({item}) => (
-    <View style={styles.container}>
+const BreadControl = ({item, ...unused}) => (
+    <View style={styles.container} {...unused}>
         <H3>
-            Bread
+            Bread Alternatives
         </H3>
         <View style={styles.choices}>
             {item.bread.map((bread, i) => (

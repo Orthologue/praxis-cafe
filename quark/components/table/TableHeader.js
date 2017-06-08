@@ -2,7 +2,7 @@
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
 // local imports
-import { grey4 } from '../../styles'
+import { grey3 } from '../../styles'
 import {styles as rowStyles} from './TableRow'
 
 const TableHeader = ({style, ...unused}) => (
@@ -12,7 +12,7 @@ const TableHeader = ({style, ...unused}) => (
 const styles = StyleSheet.create({
     container: {
         borderBottomWidth: 1,
-        borderColor: grey4,
+        borderColor: grey3,
     }
 })
 

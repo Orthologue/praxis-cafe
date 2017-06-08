@@ -6,6 +6,7 @@ import { graphql, gql } from 'react-apollo'
 // local imports
 import styles from './styles'
 import IngredientControl from './IngredientControl'
+import InstructionsControl from './InstructionsControl'
 import BreadControl from './BreadControl'
 import {
     Breadcrumbs, BreadcrumbChild,
@@ -27,7 +28,10 @@ const ItemEditor = ({data, fromCategory, closeEditor}) => data.loading ? (
         </Breadcrumbs>
         <ScrollView style={styles.content}>
             <IngredientControl item={data.item} style={styles.control}/>
-            {data.item.bread && data.item.bread.length > 0 && <BreadControl item={data.item}/>}
+            {data.item.bread && data.item.bread.length > 0 && (
+                <BreadControl item={data.item} style={styles.control}/>
+            )}
+            <InstructionsControl />
         </ScrollView>
     </View>
 )
