@@ -22,13 +22,13 @@ export default StyleSheet.create({
     h3: {
         margin: 0,
         fontSize: 24,
-        marginBottom: 2 * baseDim,
+        marginBottom: 3 * baseDim,
     },
     title: {
         ...primaryFont,
         ...reset,
         fontSize: 18,
-        marginBottom: 1 * baseDim,
+        marginBottom: 2 * baseDim,
     },
     subtitle: {
         ...primaryFont,
