@@ -54,39 +54,40 @@ const ItemIngredientSummary = ({item, onChange, ...unused}) => (
                     const set = val => () => setValue({[ingredient.name]: val})
 
                     return (
-                    <TableRow key={ingredient.id} last={i === item.ingredients.length - 1}>
-                        <TableCell style={styles.rowLabel}>
-                            <Subtitle style={{fontSize: 16, margin: 0, marginBottom: 0,}}>
-                                {ingredient.name}
-                            </Subtitle>
-                        </TableCell>
-                        <TableCell style={styles.tableCell}>
-                            <Checkbox onPress={set('none')}>
-                                {val === 'none'}
-                            </Checkbox>
-                        </TableCell>
-                        <TableCell style={styles.tableCell}>
-                            <Checkbox onPress={set('light')}>
-                                {val === 'light'}
-                            </Checkbox>
-                        </TableCell>
-                        <TableCell style={styles.tableCell}>
-                            <Checkbox onPress={set('norm')}>
-                                {val === 'norm'}
-                            </Checkbox>
-                        </TableCell>
-                        <TableCell style={styles.tableCell}>
-                            <Checkbox onPress={set('extra')}>
-                                {val === 'extra'}
-                            </Checkbox>
-                        </TableCell>
-                        <TableCell style={styles.tableCell}>
-                            <Checkbox onPress={set('side')}>
-                                {val === 'side'}
-                            </Checkbox>
-                        </TableCell>
-                    </TableRow>
-                )})}
+                        <TableRow key={ingredient.id} last={i === item.ingredients.length - 1}>
+                            <TableCell style={styles.rowLabel}>
+                                <Subtitle style={{fontSize: 16, margin: 0, marginBottom: 0,}}>
+                                    {ingredient.name}
+                                </Subtitle>
+                            </TableCell>
+                            <TableCell style={styles.tableCell}>
+                                <Checkbox onPress={set('none')}>
+                                    {val === 'none'}
+                                </Checkbox>
+                            </TableCell>
+                            <TableCell style={styles.tableCell}>
+                                <Checkbox onPress={set('light')}>
+                                    {val === 'light'}
+                                </Checkbox>
+                            </TableCell>
+                            <TableCell style={styles.tableCell}>
+                                <Checkbox onPress={set('norm')}>
+                                    {val === 'norm'}
+                                </Checkbox>
+                            </TableCell>
+                            <TableCell style={styles.tableCell}>
+                                <Checkbox onPress={set('extra')}>
+                                    {val === 'extra'}
+                                </Checkbox>
+                            </TableCell>
+                            <TableCell style={styles.tableCell}>
+                                <Checkbox onPress={set('side')}>
+                                    {val === 'side'}
+                                </Checkbox>
+                            </TableCell>
+                        </TableRow>
+                    )
+                })}
             </View>
         )}
     </Form>

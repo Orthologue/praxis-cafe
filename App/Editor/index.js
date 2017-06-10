@@ -16,7 +16,7 @@ import {
 class ItemEditor extends React.Component {
     state = {
         ingredients: {}, // a map of ingredient name -> "none" | "light" | "norm" | "extra" | "side"
-        bread: "",
+        bread: "sourdough",
         instructions: [],
     }
 
@@ -53,7 +53,7 @@ class ItemEditor extends React.Component {
                         />
                     )}
                     <InstructionsControl
-                        ingredients={this.state.instructions}
+                        instructions={this.state.instructions}
                         onChange={this._update('instructions')}
                     />
                 </ScrollView>

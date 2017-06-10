@@ -5,15 +5,15 @@ import { connect } from 'react-redux'
 import { graphql, gql } from 'react-apollo'
 // local imports
 import {
-    H3, Text, Checkbox,
+    Title, Text, Checkbox,
 } from '../../quark/components'
 import { primaryColor } from '../../quark/styles'
 
-const BreadControl = ({item, ...unused}) => (
+const BreadControl = ({item, bread: selected, onChange, ...unused}) => (
     <View style={styles.container} {...unused}>
-        <H3>
+        <Title>
             Bread Alternatives
-        </H3>
+        </Title>
         <View style={styles.choices}>
             {item.bread.map((bread, i) => (
                 <Checkbox
@@ -22,8 +22,9 @@ const BreadControl = ({item, ...unused}) => (
                     content={
                         <Text style={styles.text}>{bread}</Text>
                     }
+                    onPress={() => onChange(bread)}
                 >
-                    {i === 0}
+                    {bread === selected}
                 </Checkbox>
             ))}
         </View>

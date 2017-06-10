@@ -5,20 +5,32 @@ import { connect } from 'react-redux'
 import { graphql, gql } from 'react-apollo'
 // local imports
 import {
-    H3, TextInput,
+    updateList,
+    Title, TextInput,
 } from '../../quark/components'
 import { primaryColor } from '../../quark/styles'
 
-const BreadControl = ({item}) => (
+console.log(updateList, '<<<<')
+
+const InstructionsControl = ({instructions = [], item, onChange}) => (
     <View style={styles.container}>
-        <H3>
+        <Title>
             Instructions
-        </H3>
+        </Title>
         <View style={styles.choices}>
-            <TextInput style={styles.input}/>
-            <TextInput style={styles.input}/>
-            <TextInput style={styles.input}/>
-            <TextInput/>
+            {instructions.map((instruction, i) => (
+                <TextInput
+                    style={styles.input}
+                    asModal={true}
+                    key={i}
+                    onChange={val => onChange(updateList(instructions, i, val))}
+                >
+                    {instruction}
+                </TextInput>
+            ))}
+                <TextInput asModal={true} onChange={val => onChange([...instructions, val])} value="">
+                    {''}
+                </TextInput>
         </View>
     </View>
 )
@@ -40,4 +52,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default BreadControl
+export default InstructionsControl
