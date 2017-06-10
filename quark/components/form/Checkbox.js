@@ -2,7 +2,7 @@
 import React from 'react'
 import { View, Text, StyleSheet, TouchableWithoutFeedback } from 'react-native'
 // local imports
-import { primaryColor, secondaryColor, grey1, grey4 } from '../../styles'
+import { primaryColor, secondaryColor, grey1, grey3 } from '../../styles'
 
 const Checkbox = ({style, children, content, onPress, ...unused}) => (
     <TouchableWithoutFeedback onPress={onPress}>
@@ -46,10 +46,10 @@ const styles = StyleSheet.create({
         color: primaryColor,
     },
     inactive: {
-        borderColor: grey4,
+        borderColor: grey3,
     },
     inactiveText: {
-        color: grey4,
+        color: grey3,
     },
 })
 
