@@ -1,21 +1,23 @@
 // external imports
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, TouchableWithoutFeedback } from 'react-native'
 // local imports
 import { primaryColor, secondaryColor, grey1, grey4 } from '../../styles'
 
-const Checkbox = ({style, children, content, ...unused}) => (
-    <View
-        {...unused}
-        style={[
-            styles.container,
-            content ? styles.withContent : styles.withoutContent,
-            children ? styles.active : styles.inactive,
-            style,
-        ]}
-    >
-        <Text style={children ? styles.activeText : styles.inactiveText}>{content}</Text>
-    </View>
+const Checkbox = ({style, children, content, onPress, ...unused}) => (
+    <TouchableWithoutFeedback onPress={onPress}>
+        <View
+            {...unused}
+            style={[
+                styles.container,
+                content ? styles.withContent : styles.withoutContent,
+                children ? styles.active : styles.inactive,
+                style,
+            ]}
+        >
+            <Text style={children ? styles.activeText : styles.inactiveText}>{content}</Text>
+        </View>
+    </TouchableWithoutFeedback>
 )
 
 const styles = StyleSheet.create({
