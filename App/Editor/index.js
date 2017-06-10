@@ -3,6 +3,7 @@ import React from 'react'
 import { View, ScrollView, Text } from 'react-native'
 import { connect } from 'react-redux'
 import { graphql, gql } from 'react-apollo'
+import { Map } from 'immutable'
 // local imports
 import styles from './styles'
 import IngredientControl from './IngredientControl'
@@ -12,30 +13,60 @@ import {
     Breadcrumbs, BreadcrumbChild,
 } from '../../quark/components'
 
-const ItemEditor = ({data, fromCategory, closeEditor}) => data.loading ? (
-    <View style={{flex: 1, backgroundColor: 'white', justifyContent: 'center', alignItems: 'center'}}>
-        <Text> loading... </Text>
-    </View>
-) : (
-    <View style={styles.container}>
-        <Breadcrumbs>
-            <BreadcrumbChild onPress={closeEditor}>
-                {fromCategory}
-            </BreadcrumbChild>
-            <BreadcrumbChild active={true}>
-                {data.item.name}
-            </BreadcrumbChild>
-        </Breadcrumbs>
-        <ScrollView style={styles.content}>
-            <IngredientControl item={data.item} style={styles.control}/>
-            {data.item.bread && data.item.bread.length > 0 && (
-                <BreadControl item={data.item} style={styles.control}/>
-            )}
-            <InstructionsControl />
-        </ScrollView>
-    </View>
-)
+class ItemEditor extends React.Component {
+    state = {
+        ingredients: {}, // a map of ingredient name -> "none" | "light" | "norm" | "extra" | "side"
+        bread: "",
+        instructions: [],
+    }
 
+    render() {
+        const {data, fromCategory, closeEditor} = this.props
+
+        return data.loading ? (
+            <View style={{flex: 1, backgroundColor: 'white', justifyContent: 'center', alignItems: 'center'}}>
+                <Text> loading... </Text>
+            </View>
+        ) : (
+            <View style={styles.container}>
+                <Breadcrumbs>
+                    <BreadcrumbChild onPress={closeEditor}>
+                        {fromCategory}
+                    </BreadcrumbChild>
+                    <BreadcrumbChild active={true}>
+                        {data.item.name}
+                    </BreadcrumbChild>
+                </Breadcrumbs>
+                <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
+                    <IngredientControl
+                        ingredients={this.state.ingredients}
+                        onChange={this._update('ingredients')}
+                        item={data.item}
+                        style={styles.control}
+                    />
+                    {data.item.bread && data.item.bread.length > 0 && (
+                        <BreadControl
+                            bread={this.state.bread}
+                            onChange={this._update('bread')}
+                            item={data.item}
+                            style={styles.control}
+                        />
+                    )}
+                    <InstructionsControl
+                        ingredients={this.state.instructions}
+                        onChange={this._update('instructions')}
+                    />
+                </ScrollView>
+            </View>
+        )
+    }
+
+    constructor(...args) {
+        super(...args)
+
+        this._update = name => val => this.setState({[name]: val})
+    }
+}
 
 const query = gql`
     query ItemEditor($itemId: ID!) {
