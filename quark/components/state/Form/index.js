@@ -77,12 +77,15 @@ class Form extends React.Component {
       }
     }
 
-    // update the component stat
-    this.setState(state)
+    // the onchange handler we were passed
+    const onChange = this.props.onChange || (() => {})
+
+    // update the component state
+    this.setState(state, () => onChange(this.state.data))
   }
 
   _getValue(key) {
-    return this.state.data[key] || ''
+    return this.state.data[key]
   }
 
   _getErrors(key) {
