@@ -13,6 +13,26 @@ class TextInput extends Component{
         value: '',
     }
 
+    componentWillMount() {
+        // if there is an initial value
+        if (this.props.children) {
+            // copy it to the internal state
+            this.setState({
+                value: this.props.children
+            })
+        }
+    }
+
+    componentWillReceiveProps({children}) {
+        // if we are getting a new value
+        if (typeof children !== 'undefined') {
+            // copy it to the internal state
+            this.setState({
+                value: children
+            })
+        }
+    }
+
     _showModal() {
         this.setState({
             showModal: true,
@@ -25,7 +45,12 @@ class TextInput extends Component{
         })
     }
 
-    _submit() {
+    _submitModal() {
+        // if there is an onChange handler
+        if (this.props.onChange) {
+            // pass the value to the handler
+            this.props.onChange(this.state.value)
+        }
         this.setState({
             showModal: false,
         })
@@ -37,11 +62,14 @@ class TextInput extends Component{
         // function binds
         this._showModal = this._showModal.bind(this)
         this._cancel = this._cancel.bind(this)
-        this._submit = this._submit.bind(this)
+        this._submitModal = this._submitModal.bind(this)
     }
 
     render() {
         const {style, children, content, onChange, ...unused} = this.props
+
+        // the content of the input
+        const value =  typeof children === 'undefined' ? this.state.value : children
 
         return (
             <View style={[styles.container, style]}>
@@ -52,7 +80,7 @@ class TextInput extends Component{
                     ]}
                     onPress={this._showModal}
                 >
-                    {this.state.value}
+                    {value}
                 </Button>
                     {this.state.showModal && (
                         <Modal style={{backgroundColor: "white"}}>
@@ -63,7 +91,7 @@ class TextInput extends Component{
                                     style={styles.input}
                                     selectionColor={primaryColor}
                                     returnKeyType="done"
-                                    onSubmitEditing={this._submit}
+                                    onSubmitEditing={this._submitModal}
                                     value={this.state.value}
                                     onChangeText={value => this.setState({ value })}
                                 />
@@ -71,7 +99,7 @@ class TextInput extends Component{
                                     <SecondaryButton onPress={this._cancel} style={[styles.button, styles.leftButton]}>
                                         Cancel
                                     </SecondaryButton>
-                                    <PrimaryButton onPress={this._submit} style={[styles.button, styles.rightButton]}>
+                                    <PrimaryButton onPress={this._submitModal} style={[styles.button, styles.rightButton]}>
                                         Submit
                                     </PrimaryButton>
                                 </View>
