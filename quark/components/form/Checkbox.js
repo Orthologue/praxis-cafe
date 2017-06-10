@@ -29,8 +29,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     withContent: {
-        paddingTop: 4,
-        paddingBottom: 4,
+        paddingTop: 8,
+        paddingBottom: 8,
         paddingLeft: 8,
         paddingRight: 8,
     },
