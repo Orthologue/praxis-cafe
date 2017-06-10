@@ -15,6 +15,22 @@ export const containerSizes = StyleSheet.create({
     },
 })
 
+export const sizeConstraints = StyleSheet.create({
+    small: {
+        fontSize: 14,
+        minWidth: 100,
+        maxWidth: 210,
+    },
+    medium: {
+        minWidth: 120,
+        maxWidth: 240,
+    },
+    large: {
+        minWidth: 150,
+        maxWidth: 260,
+    },
+})
+
 export const textSizes = StyleSheet.create({
     small: {
         fontSize: 14,

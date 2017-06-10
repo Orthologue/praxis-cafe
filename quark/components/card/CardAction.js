@@ -11,6 +11,7 @@ const CardAction = ({style, ...unused}) => (
         activeColor={grey1}
         textColor={primaryColor}
         style={[styles.container, style]}
+        constrainSize={false}
         {...unused}
     />
 )

@@ -8,9 +8,11 @@ export default StyleSheet.create({
         flex: 1,
         backgroundColor: 'white',
         paddingTop: 16,
-        paddingBottom: 16,
         paddingLeft: 32,
         paddingRight: 32,
+    },
+    breadcrumbs: {
+        marginBottom: 24,
     },
     rowLabel: {
         flex: 1,
@@ -31,4 +33,15 @@ export default StyleSheet.create({
         marginBottom: 32,
         flexShrink: 0,
     },
+    footer: {
+        display: 'flex',
+        height: 88,
+        backgroundColor: "white",
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'flex-end',
+    },
+    cancelButton: {
+        marginRight: 16,
+    }
 })

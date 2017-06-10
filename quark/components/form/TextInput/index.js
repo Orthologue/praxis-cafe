@@ -79,6 +79,7 @@ class TextInput extends Component{
                         styles.inactive,
                     ]}
                     onPress={this._showModal}
+                    constrainSize={false}
                 >
                     {value}
                 </Button>

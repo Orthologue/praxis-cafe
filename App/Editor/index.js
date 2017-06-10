@@ -10,6 +10,7 @@ import IngredientControl from './IngredientControl'
 import InstructionsControl from './InstructionsControl'
 import BreadControl from './BreadControl'
 import {
+    PrimaryButton, SecondaryButton,
     Breadcrumbs, BreadcrumbChild,
 } from '../../quark/components'
 
@@ -29,7 +30,7 @@ class ItemEditor extends React.Component {
             </View>
         ) : (
             <View style={styles.container}>
-                <Breadcrumbs>
+                <Breadcrumbs style={styles.breadcrumbs}>
                     <BreadcrumbChild onPress={closeEditor}>
                         {fromCategory}
                     </BreadcrumbChild>
@@ -57,6 +58,14 @@ class ItemEditor extends React.Component {
                         onChange={this._update('instructions')}
                     />
                 </ScrollView>
+                <View style={styles.footer}>
+                    <SecondaryButton onPress={closeEditor} style={styles.cancelButton}>
+                        cancel
+                    </SecondaryButton>
+                    <PrimaryButton onPress={() => console.log("submit")}>
+                        add item
+                    </PrimaryButton>
+                </View>
             </View>
         )
     }

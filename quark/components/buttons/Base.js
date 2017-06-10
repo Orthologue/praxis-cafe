@@ -4,7 +4,7 @@ import { Text, StyleSheet, Animated, Easing, TouchableWithoutFeedback } from 're
 import PropTypes from 'prop-types'
 import { baseDim } from '../../../quark'
 // local imports
-import { styles, containerSizes, textSizes } from './styles'
+import { styles, containerSizes, textSizes, sizeConstraints } from './styles'
 
 
 class BaseButton extends React.Component {
@@ -54,7 +54,7 @@ class BaseButton extends React.Component {
     }
 
     render() {
-        const {style, children, size, activeColor, defaultColor, textColor, onPress, ...unused} = this.props
+        const {style, children, size, activeColor, constrainSize, defaultColor, textColor, onPress, ...unused} = this.props
 
         return (
             <TouchableWithoutFeedback onPressIn={this._pressIn} onPressOut={this._pressOut} onPress={onPress}>
@@ -63,6 +63,7 @@ class BaseButton extends React.Component {
                     style={[
                         styles.container,
                         containerSizes[size],
+                        constrainSize && sizeConstraints[size],
                         {
                             backgroundColor: this.state.opacity.interpolate({
                                 inputRange: [0, 1],
@@ -81,10 +82,12 @@ class BaseButton extends React.Component {
 
 export const buttonDefaultProps = {
     size: "medium",
+    constrainSize: true,
 }
 
 export const buttonPropTypes = {
     size: PropTypes.string,
+    constrainSize: PropTypes.bool,
 }
 
 BaseButton.defaultProps = {

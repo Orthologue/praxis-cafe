@@ -10,7 +10,6 @@ import {
 } from '../../quark/components'
 import { primaryColor } from '../../quark/styles'
 
-console.log(updateList, '<<<<')
 
 const InstructionsControl = ({instructions = [], item, onChange}) => (
     <View style={styles.container}>

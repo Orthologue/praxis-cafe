@@ -18,7 +18,7 @@ const Breadcrumbs = ({style, children, ...unused}) => {
         </View>
     ))
     return (
-        <View style={styles.container} {...unused} >
+        <View style={[styles.container, style]} {...unused} >
             {childs}
         </View>
     )
