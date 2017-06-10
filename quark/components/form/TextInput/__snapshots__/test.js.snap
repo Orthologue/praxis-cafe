@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form TextInput mounts a placeholder without content 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "flex-start",
+        "backgroundColor": "rgba(255, 255, 255, 1)",
+        "borderColor": "#EAEAEE",
+        "borderRadius": 2,
+        "borderWidth": 1,
+        "flex": 1,
+        "height": 40,
+        "justifyContent": "center",
+        "overflow": "hidden",
+        "paddingBottom": 12,
+        "paddingLeft": 8,
+        "paddingRight": 8,
+        "paddingTop": 12,
+      }
+    }
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "fontSize": 16,
+          },
+          Object {
+            "color": "#48484D",
+          },
+          undefined,
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Form TextInput renders content 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flex": 1,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    hitSlop={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "flex-start",
+        "backgroundColor": "rgba(255, 255, 255, 1)",
+        "borderColor": "#EAEAEE",
+        "borderRadius": 2,
+        "borderWidth": 1,
+        "flex": 1,
+        "height": 40,
+        "justifyContent": "center",
+        "overflow": "hidden",
+        "paddingBottom": 12,
+        "paddingLeft": 8,
+        "paddingRight": 8,
+        "paddingTop": 12,
+      }
+    }
+    testID={undefined}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "fontSize": 16,
+          },
+          Object {
+            "color": "#48484D",
+          },
+          undefined,
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+</View>
+`;
