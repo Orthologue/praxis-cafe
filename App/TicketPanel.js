@@ -2,8 +2,8 @@
 // @flow
 import React from 'react'
 import { View, ScrollView, Text, StyleSheet } from 'react-native'
-import { baseDim, grey2 } from '../../quark/styles'
-import { PrimaryButton } from '../../quark'
+import { baseDim, grey2 } from '../quark/styles'
+import { PrimaryButton } from '../quark'
 
 const TicketPanel = () => (
     <View style={styles.container}>
