@@ -1,5 +1,5 @@
 # project: cj3afpdrhkzih0182a4655f0e
-# version: 16
+# version: 19
 
 type Category implements Node {
   createdAt: DateTime!
@@ -14,8 +14,8 @@ type Item implements Node {
   plu: String!
   description: String!
   bread: [String!]
-  salad: [String!] @migrationValue(value: [])
   temperature: MeatTemperature
+  salad: [String!]
   extra: [Item!]! @relation(name: "ItemExtras")
   ingredients: [Ingredient!]! @relation(name: "ItemIngredients")
   optionals: [Ingredient!]! @relation(name: "ItemOptionals")
