@@ -2,9 +2,9 @@
 import React, { Component } from 'react'
 import { TextInput as NativeInput, View, Text, StyleSheet, Modal } from 'react-native'
 // local imports
-import { primaryColor, secondaryColor, grey2, grey4, baseDim } from '../../../styles'
-import { Button, PrimaryButton, SecondaryButton } from '../../buttons'
-import { StatusBar } from '../../../native'
+import { primaryColor, secondaryColor, grey2, grey4, baseDim } from '../../styles'
+import { Button, PrimaryButton, SecondaryButton } from '../buttons'
+import { StatusBar } from '../../native'
 
 class TextInput extends Component{
 
