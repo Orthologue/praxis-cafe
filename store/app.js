@@ -1,8 +1,14 @@
 const SET_VIEW = 'SET_VIEW'
+const ADD_ITEM = 'ADD_ITEM'
 
 export const setView = (path, config) => ({
     type: SET_VIEW,
     payload: { path, config },
+})
+
+export const addItem = item => ({
+    type: ADD_ITEM,
+    payload: item
 })
 
 const initialState = {
@@ -10,6 +16,7 @@ const initialState = {
         path: '',
         config: {},
     },
+    items: [],
 }
 
 export default (state = {}, {type, payload}) => {
@@ -17,6 +24,15 @@ export default (state = {}, {type, payload}) => {
         return {
             ...state,
             view: payload
+        }
+    }
+    if (type === ADD_ITEM) {
+        return {
+            ...state,
+            items: [
+                ...state.items,
+                paylo
+            ]
         }
     }
 

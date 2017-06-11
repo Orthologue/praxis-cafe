@@ -1,6 +1,6 @@
 // external imports
 import React from 'react'
-import { View, Text , StyleSheet} from 'react-native'
+import { View, Text , StyleSheet, Image} from 'react-native'
 import { Route, Switch, Redirect } from 'react-router-native'
 import { connect } from 'react-redux'
 import { App, H3 } from '../../quark'
@@ -23,9 +23,15 @@ const RootView = connect(selector)(({view = {}}) => {
         <Provider>
             <App>
                 <AppBar style={styles.appBar}>
-                    <H3 style={styles.appName}>
-                        Café
-                    </H3>
+                    <Image
+                        source={require('./radish-top.png')}
+                        style={styles.branding}
+                    />
+                    <View style={styles.appName}>
+                        <H3>
+                            Café
+                        </H3>
+                    </View>
                 </AppBar>
                 <View style={styles.content}>
                     <TicketPanel />
@@ -37,8 +43,23 @@ const RootView = connect(selector)(({view = {}}) => {
 })
 
 const styles = StyleSheet.create({
-    appBar: {
+    branding: {
+        display: 'flex',
+        height: 64,
+        width: 64,
+        alignSelf: 'flex-end',
+        marginLeft: 20,
+        marginTop: 4,
+    },
+    appName: {
+        flex: 1,
+        justifyContent: 'center',
         alignItems: 'center',
+        height: '100%',
+    },
+    appBar: {
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
     },
     content: {
         display: 'flex',
