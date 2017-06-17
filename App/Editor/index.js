@@ -13,6 +13,7 @@ import {
     PrimaryButton, SecondaryButton,
     Breadcrumbs, BreadcrumbChild,
 } from '../../quark/components'
+import { addItem } from '../../store'
 
 class ItemEditor extends React.Component {
     state = {
@@ -22,7 +23,7 @@ class ItemEditor extends React.Component {
     }
 
     render() {
-        const {data, fromCategory, closeEditor} = this.props
+        const {data, fromCategory, closeEditor, submitItem} = this.props
 
         return data.loading ? (
             <View style={{flex: 1, backgroundColor: 'white', justifyContent: 'center', alignItems: 'center'}}>
@@ -62,7 +63,7 @@ class ItemEditor extends React.Component {
                     <SecondaryButton onPress={closeEditor} style={styles.cancelButton}>
                         cancel
                     </SecondaryButton>
-                    <PrimaryButton onPress={() => console.log("submit")}>
+                    <PrimaryButton onPress={this._submit}>
                         add item
                     </PrimaryButton>
                 </View>
@@ -70,10 +71,21 @@ class ItemEditor extends React.Component {
         )
     }
 
+    _submit() {
+        // add the item to the ticket
+        this.props.submitItem({
+            ...this.state,
+            plu: this.props.data.item.plu,
+        })
+        // close the editor
+        this.props.closeEditor()
+    }
+
     constructor(...args) {
         super(...args)
 
         this._update = name => val => this.setState({[name]: val})
+        this._submit = this._submit.bind(this)
     }
 }
 
@@ -82,6 +94,7 @@ const query = gql`
         item: Item(id: $itemId) {
             name
             bread
+            plu
 
             ${IngredientControl.fragments.item}
             ${BreadControl.fragments.item}
@@ -89,10 +102,16 @@ const query = gql`
     }
 `
 
+const mapDispatchToProps = dispatch => ({
+    submitItem: (item) => dispatch(addItem(item)),
+})
+
+const Connected = connect(null, mapDispatchToProps)(ItemEditor)
+
 export default graphql(query, {
     options: ({ itemId }) => ({
         variables: {
             itemId,
         }
     })
-})(ItemEditor)
+})(Connected)

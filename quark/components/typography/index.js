@@ -31,3 +31,7 @@ export const Text = ({style, ...unused}) => (
 export const Link = ({style, ...unused}) => (
     <NativeText style={[styles.link, style]} {...unused} />
 )
+
+export const Monospace = ({style, ...unused}) => (
+    <NativeText style={[styles.link, style]} {...unused} />
+)

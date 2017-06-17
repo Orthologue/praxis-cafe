@@ -33,7 +33,7 @@ export default StyleSheet.create({
     subtitle: {
         ...primaryFont,
         ...reset,
-        fontSize: 14,
+        fontSize: 16,
         marginBottom: 1 * baseDim,
     },
     text: {

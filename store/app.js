@@ -19,7 +19,7 @@ const initialState = {
     items: [],
 }
 
-export default (state = {}, {type, payload}) => {
+export default (state = initialState, {type, payload}) => {
     if (type === SET_VIEW) {
         return {
             ...state,
@@ -31,7 +31,7 @@ export default (state = {}, {type, payload}) => {
             ...state,
             items: [
                 ...state.items,
-                paylo
+                payload
             ]
         }
     }
