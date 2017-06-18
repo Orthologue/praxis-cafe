@@ -19,6 +19,20 @@ const initialState = {
     items: [],
 }
 
+// generate a unique item id
+const generateItemId = state => {
+    // our first try
+    const candidate = state.items.length + 1
+
+    // if there is already an item with that id
+    if (state.items.find(({id}) => id === candidate)) {
+        // try against
+        return generateItemId()
+    }
+
+    return candidate
+}
+
 export default (state = initialState, {type, payload}) => {
     if (type === SET_VIEW) {
         return {
@@ -31,7 +45,10 @@ export default (state = initialState, {type, payload}) => {
             ...state,
             items: [
                 ...state.items,
-                payload
+                {
+                    id: generateItemId(state),
+                    ...payload,
+                }
             ]
         }
     }
