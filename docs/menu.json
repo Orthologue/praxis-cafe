@@ -1,0 +1,1568 @@
+[
+    {
+        "plu": "771",
+        "name": "single espresso",
+        "size": "small",
+        "category": "drinks",
+        "extra": [
+            "775"
+        ]
+    },
+    {
+        "plu": "778",
+        "name": "double espresso",
+        "size": "large",
+        "category": "drinks",
+        "extra": [
+            "775"
+        ]
+    },
+    {
+        "plu": "772",
+        "name": "cappuccino",
+        "category": "drinks",
+        "milk": "whole milk",
+        "extra": [
+            "775"
+        ]
+    },
+    {
+        "plu": "774",
+        "name": "single americano",
+        "size": "small",
+        "category": "drinks",
+        "extra": [
+            "775"
+        ]
+    },
+    {
+        "plu": "779",
+        "name": "double americano",
+        "size": "large",
+        "category": "drinks",
+        "extra": [
+            "775"
+        ]
+    },
+    {
+        "plu": "102",
+        "name": "macchiato",
+        "category": "drinks",
+        "milk": "whole milk",
+        "extra": [
+            "775"
+        ]
+    },
+    {
+        "plu": "71",
+        "name": "small coffee",
+        "size": "small",
+        "category": "drinks"
+    },
+    {
+        "plu": "73",
+        "name": "large coffee",
+        "size": "large",
+        "category": "drinks"
+    },
+    {
+        "plu": "88",
+        "name": "small cold brew",
+        "size": "small",
+        "category": "drinks"
+    },
+    {
+        "plu": "89",
+        "name": "large cold brew",
+        "size": "large",
+        "category": "drinks"
+    },
+    {
+        "plu": "74",
+        "name": "small iced coffee",
+        "size": "small",
+        "category": "drinks",
+        "ingredients": ["ice"]
+    },
+    {
+        "plu": "75",
+        "name": "large iced coffee",
+        "size": "large",
+        "category": "drinks",
+        "ingredients": ["ice"]
+    },
+    {
+        "plu": "78",
+        "name": "small tea",
+        "size": "small",
+        "category": "drinks",
+        "optional": ["lemon"],
+        "varieties": [
+            "earl grey", "english breakfast", "lemon ginger", "chamomile", "white coconut",
+            "massala chai", "green pomegranate"
+        ]
+    },
+    {
+        "plu": "79",
+        "name": "large tea",
+        "size": "large",
+        "category": "drinks",
+        "optional": ["lemon"],
+        "varieties": [
+            "earl grey", "english breakfast", "lemon ginger", "chamomile", "white coconut",
+            "massala chai", "green pomegranate"
+        ]
+    },
+    {
+        "plu": "76",
+        "name": "small iced tea",
+        "size": "small",
+        "category": "drinks",
+        "optional": ["lemon"],
+        "ingredients": ["ice"],
+        "varieties": [
+            "earl grey", "english breakfast", "lemon ginger", "chamomile", "white coconut",
+            "massala chai", "green pomegranate"
+        ]
+    },
+    {
+        "plu": "77",
+        "name": "large iced tea",
+        "size": "large",
+        "category": "drinks",
+        "optional": ["lemon"],
+        "ingredients": ["ice"],
+        "varieties": [
+            "earl grey", "english breakfast", "lemon ginger", "chamomile", "white coconut",
+            "massala chai", "green pomegranate"
+        ]
+    },
+    {
+        "plu": "773",
+        "name": "double latte",
+        "size": "double",
+        "category": "drinks",
+        "milk": "whole milk",
+        "extra": [
+            "775"
+        ]
+    },
+    {
+        "plu": "100",
+        "name": "single iced latte",
+        "size": "small",
+        "category": "drinks",
+        "milk": "whole milk",
+        "ingredients": ["ice"],
+        "extra": [
+            "775"
+        ]
+    },
+    {
+        "plu": "101",
+        "name": "double iced latte",
+        "size": "large",
+        "category": "drinks",
+        "milk": "whole milk",
+        "ingredients": ["ice"],
+        "extra": [
+            "775"
+        ]
+    },
+    {
+        "plu": "80",
+        "name": "small lemonade",
+        "size": "small",
+        "category": "drinks"
+    },
+    {
+        "plu": "81",
+        "name": "large lemonade",
+        "size": "large",
+        "category": "drinks"
+    },
+    {
+        "plu": "84",
+        "name": "small arnold palmer",
+        "size": "small",
+        "category": "drinks"
+    },
+    {
+        "plu": "85",
+        "name": "large arnold palmer",
+        "size": "large",
+        "category": "drinks"
+    },
+    {
+        "plu": "7138",
+        "name": "bagel",
+        "category": "pastries",
+        "varieties": ["plain", "everything"]
+    },
+    {
+        "plu": "786",
+        "name": "bagel & spread",
+        "category": "pastries",
+        "optional": ["butter", "cream cheese", "jelly"],
+        "varieties": ["plain", "everything"]
+    },
+    {
+        "plu": "7165",
+        "name": "brownie",
+        "category": "pastries"
+    },
+    {
+        "plu": "7164",
+        "name": "cheese bagel",
+        "category": "pastries"
+    },
+    {
+        "plu": "784",
+        "name": "cheese bagel & spread",
+        "category": "pastries",
+        "optional": ["butter", "cream cheese", "jelly"]
+    },
+    {
+        "plu": "7105",
+        "name": "cookie",
+        "category": "pastries"
+    },
+    {
+        "plu": "7110",
+        "name": "croissant",
+        "category": "pastries"
+    },
+    {
+        "plu": "7112",
+        "name": "chocolate croissant",
+        "category": "pastries"
+    },
+    {
+        "plu": "7111",
+        "name": "ham croissant",
+        "category": "pastries"
+    },
+    {
+        "plu": "7120",
+        "name": "muffin",
+        "category": "pastries",
+        "optional": ["butter", "cream cheese", "jelly"]
+    },
+    {
+        "plu": "7163",
+        "name": "pretzel roll",
+        "category": "pastries"
+    },
+    {
+        "plu": "7117",
+        "name": "scone",
+        "category": "pastries"
+    },
+    {
+        "plu": "764",
+        "name": "burrito",
+        "category": "breakfast",
+        "description": [
+            "Build your own breakfast burrito using locally raised Rosemary Farm eggs",
+            "and an array of farm fresh ingredients."
+        ],
+        "extra": [
+            "7641",
+            "835",
+            "803"
+        ],
+        "optional": [
+            "bacon",
+            "chorizo",
+            "ham",
+            "turkey sausage",
+            "cheddar",
+            "feta",
+            "goat cheese",
+            "mozzarella",
+            "asparagus",
+            "broccoli",
+            "jalapeños",
+            "green bell peppers",
+            "green onions",
+            "red bell peppers",
+            "leeks",
+            "mushrooms",
+            "olives",
+            "onions",
+            "pesto",
+            "salsa",
+            "spinach",
+            "sriracha",
+            "tomatoes",
+            "zucchini"
+        ]
+    },
+    {
+        "plu": "765",
+        "name": "omelette",
+        "category": "breakfast",
+        "description": [
+            "Build your own omelette using locally raised Rosemary Farm eggs",
+            "and an array of farm fresh ingredients."
+        ],
+        "extra": [
+            "7641",
+            "835",
+            "803"
+        ],
+        "optional": [
+            "bacon",
+            "chorizo",
+            "ham",
+            "turkey sausage",
+            "cheddar",
+            "feta",
+            "goat cheese",
+            "mozzarella",
+            "asparagus",
+            "broccoli",
+            "jalapeños",
+            "green bell peppers",
+            "green onions",
+            "red bell peppers",
+            "leeks",
+            "mushrooms",
+            "olives",
+            "onions",
+            "pesto",
+            "salsa",
+            "spinach",
+            "sriracha",
+            "tomatoes",
+            "zucchini"
+        ]
+    },
+    {
+        "plu": "712",
+        "name": "breakfast - bacon",
+        "category": "breakfast",
+        "description": [
+            "Eggs your way with arugula and cheddar cheese,",
+            "on a toasted Bay's english muffin"
+        ],
+        "eggs": 1,
+        "extra": [
+            "7641",
+            "835",
+            "803"
+        ],
+        "ingredients": [
+            "cheddar",
+            "arugula"
+        ],
+        "bread": "english muffin"
+    },
+    {
+        "plu": "766",
+        "name": "breakfast - sausage",
+        "category": "breakfast",
+        "description": [
+            "Eggs your way with arugula and cheddar cheese,",
+            "on a toasted Bay's english muffin"
+        ],
+        "eggs": 1,
+        "extra": [
+            "7641",
+            "835",
+            "803"
+        ],
+        "ingredients": [
+            "arugula",
+            "cheddar"
+        ],
+        "bread": "english muffin"
+    },
+    {
+        "plu": "767",
+        "name": "avocado toast",
+        "category": "breakfast",
+        "description": [
+            "Toasted seeded bread, arugula-basil pesto, baby spinach, avocado and sprouts",
+            "on a toasted Bay's english muffin"
+        ],
+        "eggs": 1,
+        "extra": [
+            "7642",
+            "7643",
+            "803"
+        ],
+        "ingredients": [
+            "baby spinach",
+            "avocado",
+            "sprouts",
+            "pesto"
+        ],
+        "bread": "multigrain"
+    },
+    {
+        "plu": "792",
+        "name": "grain bowl",
+        "category": "breakfast",
+        "description": [
+            "Rainbow quinoa, cherry tomatoes, avocado, lemon, garlic and kimchi paste,",
+            "topped with a poached egg and hemp seeds"
+        ],
+        "ingredients": [
+            "poached egg",
+            "rainbow quinoa",
+            "cherry tomatoes",
+            "avocado",
+            "lemon",
+            "garlic",
+            "kimchi paste",
+            "hemp seeds"
+        ]
+    },
+    {
+        "plu": "787",
+        "name": "lox and bagel",
+        "category": "breakfast",
+        "description": [
+            "Open faced bagel of your choice, lox, cream cheese, sliced tomato",
+            "capers, and red onion"
+        ],
+        "varieties": ["plain", "everything", "multigrain", "gluten free"],
+        "ingredients": [
+            "lox",
+            "cream cheese",
+            "sliced tomato",
+            "capers",
+            "onions"
+        ]
+    },
+    {
+        "plu": "780",
+        "name": "california parfait",
+        "category": "breakfast",
+        "description": [
+            "straus whole milk yogurt, Pudwill Farm berries, house granola,",
+            "with an agave drizzle"
+        ],
+        "ingredients": [
+            "yogurt",
+            "berries",
+            "granola",
+            "agave"
+        ]
+    },
+    {
+        "plu": "785",
+        "name": "two eggs",
+        "category": "breakfast",
+        "description": [ "two eggs your way" ]
+    },
+    {
+        "plu": "788",
+        "name": "breakfast potatoes",
+        "category": "breakfast",
+        "description": [ "breakfast potatoes" ]
+    },
+    {
+        "plu": "710",
+        "name": "house sausage",
+        "category": "breakfast",
+        "description": [ "house-made sausage" ]
+    },
+    {
+        "plu": "860",
+        "name": "smoked bacon",
+        "category": "breakfast",
+        "description": [ "apple wood smoked bacon" ]
+    },
+    {
+        "plu": "711",
+        "name": "toast",
+        "category": "breakfast",
+        "description": [ "toast" ],
+        "optional": ["butter", "jelly"],
+        "bread": "multigrain"
+    },
+    {
+        "plu": "709",
+        "name": "pork bánh mì",
+        "category": "sandwiches",
+        "description": [
+            "Oven roasted pork, pickled carrots, pickled daikon, English cucumber,",
+            "cilantro, jalapeño, mayonnaise, on a pretzel roll" ],
+        "salad": "arugula",
+        "bread": "pretzel roll",
+        "extra": [
+            "818",
+            "835"
+        ],
+        "ingredients": [
+            "pork",
+            "pickled carrots",
+            "pickled daikon",
+            "English cucumber",
+            "cilantro",
+            "jalapeño",
+            "mayonnaise"
+        ]
+    },
+    {
+        "plu": "836",
+        "name": "tofu bánh mì",
+        "category": "sandwiches",
+        "salad": "arugula",
+        "description": [
+            "Tofu, orange-miso marmalade, pickled carrot, pickled daikon, pickled cucumber,",
+            "jalapeño, mint, cilantro, vegenaise, on a soft roll"
+        ],
+        "bread": "soft roll",
+        "extra": [
+            "835"
+        ],
+        "ingredients": [
+            "tofu",
+            "orange-miso marmalade",
+            "pickled carrot",
+            "pickled daikon",
+            "pickled cucumber",
+            "jalapeño",
+            "mint",
+            "cilantro",
+            "vegenaise"
+        ]
+    },
+    {
+        "plu": "830",
+        "name": "shiitake bánh mì",
+        "category": "sandwiches",
+        "salad": "arugula",
+        "description": [
+            "Sauteéd Shiitake mushrooms, sriracha chili almond butter spread, cilantro,",
+            "pickled daikon, english cucumber, on a soft roll"
+        ],
+        "bread": "soft roll",
+        "extra": [
+            "835"
+        ],
+        "ingredients": [
+            "mushrooms",
+            "sriracha spread",
+            "cilantro",
+            "pickled daikon",
+            "english cucumber"
+        ]
+    },
+    {
+        "plu": "742",
+        "name": "dragon",
+        "category": "sandwiches",
+        "salad": "arugula",
+        "description": [
+            "Mary's free-range chicken, candied bacon, pickled red onion, sweet jalapeños,",
+            "chipotle aioli, mixed greens, on a French roll"
+        ],
+        "bread": "french roll",
+        "extra": [
+            "835"
+        ],
+        "ingredients": [
+            "chicken",
+            "swiss cheese",
+            "candied bacon",
+            "pickled red onion",
+            "sweet jalapeños",
+            "chipotle aioli",
+            "mixed greens"
+        ]
+    },
+    {
+        "plu": "705",
+        "name": "italian",
+        "category": "sandwiches",
+        "salad": "arugula",
+        "description": [
+            "Prosciutto di Parma, fennel salami, roasted tomatoes, provolone, arugula,",
+            "basil pesto, on a baguette"
+        ],
+        "bread": "french baguette",
+        "extra": [
+            "835"
+        ],
+        "ingredients": [
+            "prosciutto di Parma",
+            "fennel salami",
+            "roasted tomatoes",
+            "provolone","arugula",
+            "basil pesto"
+        ]
+    },
+    {
+        "plu": "715",
+        "name": "california",
+        "category": "sandwiches",
+        "salad": "arugula",
+        "description": [
+            "Turkey breast, bacon, avocado, pickled red onion, romaine, tomato,",
+            "chipotle aioli, on sourdough"
+        ],
+        "bread": "sourdough",
+        "extra": [
+            "835"
+        ],
+        "ingredients": [
+            "turkey breast",
+            "swiss cheese",
+            "bacon",
+            "avocado",
+            "pickled red onion",
+            "romaine",
+            "tomato",
+            "chipotle aioli"
+        ]
+    },
+    {
+        "plu": "810",
+        "name": "green goddess",
+        "category": "sandwiches",
+        "salad": "arugula",
+        "description": [
+            "Roasted turkey breast, tomato, pickled red onion, spicy guacamole,",
+            "smoked gouda, romaine, chipotle aioli, hot pressed on sourdough"
+        ],
+        "bread": "italian roll",
+        "extra": [
+            "835"
+        ],
+        "ingredients": [
+            "roasted turkey breast",
+            "tomato",
+            "pickled red onion",
+            "spicy guacamole",
+            "smoked gouda",
+            "romaine",
+            "chipotle aioli"
+        ]
+    },
+    {
+        "plu": "702",
+        "name": "jambon parisien",
+        "category": "sandwiches",
+        "salad": "arugula",
+        "description": [
+            "French ham, cornichons, big eye swiss, butter, dijon, on a baguette"
+        ],
+        "bread": "french baguette",
+        "extra": [
+            "802",
+            "835"
+        ],
+        "ingredients": [
+            "french ham",
+            "cornichons",
+            "big eye swiss",
+            "butter",
+            "dijon"
+        ]
+    },
+    {
+        "plu": "806",
+        "name": "rib eye",
+        "category": "sandwiches",
+        "salad": "arugula",
+        "description": [
+            "Rib-eye steak, caramelized onions & mushrooms, mozzarella, chipotle aioli,",
+            "on an Italian roll"
+        ],
+        "bread": "italian roll",
+        "extra": [
+            "835"
+        ],
+        "ingredients": [
+            "rib-eye steak",
+            "caramelized onions & mushrooms",
+            "mozzarella",
+            "chipotle aioli"
+        ]
+    },
+    {
+        "plu": "840",
+        "name": "brisket",
+        "category": "sandwiches",
+        "salad": "arugula",
+        "description": [
+            "House smoked brisket, big eye Swiss, caramelized onions, arugula,",
+            "chipotle aioli, on a pretzel roll"
+        ],
+        "extra": [
+            "835"
+        ],
+        "ingredients": [
+            "smoked brisket",
+            "big eye Swiss",
+            "caramelized onions",
+            "arugula",
+            "chipotle aioli"
+        ]
+    },
+    {
+        "plu": "829",
+        "name": "tuscan",
+        "category": "sandwiches",
+        "salad": "arugula",
+        "description": [
+            "Roasted chicken breast, prosciutto, mozzarella, mixed greens, candied almonds,",
+            "basil pesto, oven roasted tomatoes, balsamic, on sourdough"
+        ],
+        "bread": "pretzel roll",
+        "extra": [
+            "835"
+        ],
+        "ingredients": [
+            "roasted chicken breast",
+            "prosciutto",
+            "mozzarella",
+            "mixed greens",
+            "candied almonds",
+            "basil pesto",
+            "oven roasted tomatoes",
+            "balsamic"
+        ]
+    },
+    {
+        "plu": "831",
+        "name": "chipotle chicken wrap",
+        "category": "sandwiches",
+        "salad": "arugula",
+        "description": [
+            "Pulled chicken stewed in a chipotle adobo sauce, caramelized onion, lettuce,",
+            "tomato, guacamole, cotija cheese and sour cream, in a flour tortilla"
+        ],
+        "bread": "flour tortilla",
+        "extra": [
+            "835"
+        ],
+        "ingredients": [
+            "pulled chicken",
+            "caramelized onion",
+            "lettuce",
+            "tomato",
+            "guacamole",
+            "cotija cheese",
+            "sour cream"
+        ]
+    },
+    {
+        "plu": "743",
+        "name": "meatball",
+        "category": "sandwiches",
+        "salad": "arugula",
+        "description": [
+            "Beef meatballs, chipotle marinara, herbed chèvre, basil pesto on a roll"
+        ],
+        "bread": "italian roll",
+        "extra": [
+            "835"
+        ],
+        "ingredients": [
+            "beef meatballs",
+            "chipotle marinara",
+            "herbed chèvre",
+            "basil pesto"
+        ]
+    },
+    {
+        "plu": "707",
+        "name": "cuban",
+        "category": "sandwiches",
+        "salad": "arugula",
+        "description": [
+            "Roasted pork loin, French ham, big eye swiss, cornichons, mustard, on a roll"
+        ],
+        "bread": "italian roll",
+        "extra": [
+            "835"
+        ],
+        "ingredients": [
+            "pork loin",
+            "ham",
+            "big eye swiss",
+            "cornichons",
+            "mustard"
+        ]
+    },
+    {
+        "plu": "832",
+        "name": "pastrami",
+        "category": "sandwiches",
+        "salad": "arugula",
+        "description": [
+            "Lean bottom round pastrami, Emmental swiss, pickled red onion, baby romaine,",
+            "mayonnaise, whole grain mustard, on pumpernickel"
+        ],
+        "bread": "pumpernickel",
+        "extra": [
+            "835"
+        ],
+        "ingredients": [
+            "pastrami",
+            "Emmental swiss",
+            "pickled red onion",
+            "baby romaine",
+            "mayonnaise",
+            "whole grain mustard"
+        ]
+    },
+    {
+        "plu": "833",
+        "name": "roast beef",
+        "category": "sandwiches",
+        "salad": "arugula",
+        "description": [
+            "Roast beef, Hook’s cheddar, tomato, baby romaine, horseradish aioli,",
+            "whole grain mustard, on seeded rye"
+        ],
+        "bread": "rye",
+        "extra": [
+            "835"
+        ],
+        "ingredients": [
+            "roast beef",
+            "Hook’s cheddar",
+            "tomato",
+            "baby romaine",
+            "horseradish aioli",
+            "whole grain mustard"
+        ]
+    },
+    {
+        "plu": "805",
+        "name": "tuna melt",
+        "category": "sandwiches",
+        "salad": "arugula",
+        "description": [
+            "Oil-poached tuna, tomato, red onion, bread & butter pickles, cheddar,",
+            "mixed greens, garlic aioli, on sourdough"
+        ],
+        "bread": "sourdough",
+        "extra": [
+            "835"
+        ],
+        "ingredients": [
+            "tuna",
+            "tomato",
+            "red onion",
+            "pickles",
+            "cheddar",
+            "mixed greens",
+            "garlic aioli"
+        ]
+    },
+    {
+        "plu": "708",
+        "name": "burrata",
+        "category": "sandwiches",
+        "salad": "arugula",
+        "description": [
+            "Fresh buffalo milk burrata, vine ripened tomato, arugula, basil pesto,",
+            "balsamic reduction, open faced on ciabatta" ],
+        "bread": "ciabatta",
+        "extra": [
+            "835"
+        ],
+        "ingredients": [
+            "burrata",
+            "vine ripened tomato",
+            "arugula",
+            "basil pesto",
+            "balsamic reduction"
+        ]
+    },
+    {
+        "plu": "726",
+        "name": "cheesemonger",
+        "category": "sandwiches",
+        "salad": "arugula",
+        "description": [
+            "Grilled cheese made with artisan cheese from our case on white levain bread"
+        ],
+        "bread": "white levain",
+        "extra": [
+            "835", "802", "860", "837"
+        ],
+        "ingredients": [
+            "artisan cheese"
+        ],
+        "optional": [
+            "tomato"
+        ]
+    },
+    {
+        "plu": "706",
+        "name": "veggie",
+        "category": "sandwiches",
+        "salad": "arugula",
+        "description": [
+            "Beefsteak tomato, avocado, baby spinach, pickled red onion, broccoli sprouts,",
+            "big eye swiss, humus, on multigrain"
+        ],
+        "bread": "multigrain",
+        "extra": [
+            "835"
+        ],
+        "ingredients": [
+            "tomato",
+            "avocado",
+            "baby spinach",
+            "pickled red onion",
+            "broccoli sprouts",
+            "big eye swiss",
+            "humus"
+        ]
+    },
+    {
+        "plu": "744",
+        "name": "salad",
+        "category": "sandwiches",
+        "salad": "arugula",
+        "description": [
+            "Your choice of tarragon egg, chicken curry, or tuna salad on multigrain"
+        ],
+        "bread": "multigrain",
+        "extra": [
+            "835"
+        ],
+        "optional": [
+            "tarragon egg",
+            "chicken curry",
+            "tuna"
+        ]
+    },
+    {
+        "plu": "735",
+        "name": "signature salad",
+        "category": "soups & salads",
+        "description": [
+            "Seasonal fruit on a bed of wild arugula tossed with barrel aged feta and",
+            "walnuts with a honey-balsamic vinaigrette"
+        ],
+        "extra": [
+            "800",
+            "801"
+        ]
+    },
+    {
+        "plu": "807",
+        "name": "seared tuna niçoise",
+        "category": "soups & salads",
+        "description": [
+            "Coriander & fennel encrusted tuna, cherry tomatoes, fingerling potatoes,",
+            "green beans, hard boiled egg, niçoise olives, capers,",
+            "in a shallot vinaigrette"
+        ]
+    },
+    {
+        "plu": "722",
+        "name": "kale caesar",
+        "category": "soups & salads",
+        "description": [
+            "Romaine hearts, massaged kale, freshly baked croutons, and pecorino romano"
+        ],
+        "extra": [
+            "800",
+            "801"
+        ]
+    },
+    {
+        "plu": "809",
+        "name": "mediterranean",
+        "category": "soups & salads",
+        "description": [
+            "Wild arugula, roasted eggplant, hearts of palm, heirloom cherry tomatoes",
+            "garbanzo beans, kalamata olives, barrel-aged feta, in a shallot vinaigrette"
+        ],
+        "extra": [
+            "800",
+            "801"
+        ]
+    },
+    {
+        "plu": "723",
+        "name": "wedge",
+        "category": "soups & salads",
+        "description": [
+            "Salanova lettuce, Stilton blue cheese, baby heirloom tomatoes,",
+            "toasted walnuts, in a cabernet shallot vinaigrette"
+        ],
+        "extra": [
+            "800",
+            "801"
+        ]
+    },
+    {
+        "plu": "741",
+        "name": "trio",
+        "category": "soups & salads",
+        "description": [
+            "Three portions of any side salad of your choice"
+        ],
+        "sides": 3,
+        "extra": [
+            "800",
+            "801"
+        ]
+    },
+    {
+        "plu": "751",
+        "name": "cup of soup",
+        "category": "soups & salads",
+        "description": [
+            "A cup of soup of the day"
+        ],
+        "varieties": [ "chilli", "clam chowder", "vegan", "special" ],
+        "optional": ["cheddar", "onion", "sour cream", "sliced baguette"]
+    },
+    {
+        "plu": "727",
+        "name": "bowl of soup",
+        "category": "soups & salads",
+        "description": [
+            "A bowl of soup of the day"
+        ],
+        "varieties": [ "chilli", "clam chowder", "vegan", "special" ],
+        "optional": ["cheddar", "onion", "sour cream", "sliced baguette"]
+    },
+    {
+        "plu": "728",
+        "name": "large bowl of soup",
+        "category": "soups & salads",
+        "description": [
+            "Extra large bowl of soup of the day"
+        ],
+        "varieties": [ "chilli", "clam chowder", "vegan", "special" ],
+        "optional": ["cheddar", "onion", "sour cream", "sliced baguette"]
+    },
+    {
+        "plu": "745",
+        "name": "cup and a half",
+        "label": "cup and &frac12;",
+        "category": "soups & salads",
+        "description": [
+            "Cup of soup and a half salad sandwich"
+        ],
+        "extra": [
+            "800",
+            "801"
+        ],
+        "salad": "arugula",
+        "varieties": [ "chilli", "clam chowder", "vegan", "special" ],
+        "optional": ["cheddar", "onion", "sour cream", "sliced baguette"]
+    },
+    {
+        "plu": "838",
+        "name": "cup + salad",
+        "label": "cup + salad",
+        "category": "soups & salads",
+        "description": [
+            "Cup of soup and side salad"
+        ],
+        "extra": [
+            "800",
+            "801"
+        ],
+        "salad": "arugula",
+        "varieties": [ "chilli", "clam chowder", "vegan", "special" ],
+        "optional": ["cheddar", "onion", "sour cream", "sliced baguette"]
+    },
+    {
+        "plu": "8004",
+        "name": "briam",
+        "category": "mains"
+    },
+    {
+        "plu": "8001",
+        "name": "beef brisket",
+        "category": "mains"
+    },
+    {
+        "plu": "8006",
+        "name": "chicken teriyaki",
+        "category": "mains"
+    },
+    {
+        "plu": "7999",
+        "name": "chicken za'atar",
+        "category": "mains"
+    },
+    {
+        "plu": "8011",
+        "name": "fried chicken",
+        "category": "mains"
+    },
+    {
+        "plu": "8010",
+        "name": "roasted chicken",
+        "category": "mains"
+    },
+    {
+        "plu": "7994",
+        "name": "lamb kofta",
+        "category": "mains"
+    },
+    {
+        "plu": "8002",
+        "name": "lamb osso buco",
+        "category": "mains"
+    },
+    {
+        "plu": "8008",
+        "name": "lasagna",
+        "category": "mains"
+    },
+    {
+        "plu": "7993",
+        "name": "meatballs beef/pork",
+        "category": "mains"
+    },
+    {
+        "plu": "7992",
+        "name": "meatballs chicken",
+        "category": "mains"
+    },
+    {
+        "plu": "8012",
+        "name": "meatloaf",
+        "category": "mains"
+    },
+    {
+        "plu": "8013",
+        "name": "pork",
+        "category": "mains"
+    },
+    {
+        "plu": "7997",
+        "name": "salmon miso glazed",
+        "category": "mains"
+    },
+    {
+        "plu": "7996",
+        "name": "salmon seared",
+        "category": "mains"
+    },
+    {
+        "plu": "8000",
+        "name": "salmon special",
+        "category": "mains"
+    },
+    {
+        "plu": "7991",
+        "name": "salmon poached",
+        "category": "mains"
+    },
+    {
+        "plu": "7998",
+        "name": "short ribs",
+        "category": "mains"
+    },
+    {
+        "plu": "8007",
+        "name": "sole",
+        "category": "mains"
+    },
+    {
+        "plu": "7995",
+        "name": "turkey patties",
+        "category": "mains"
+    },
+    {
+        "plu": "750",
+        "name": "mac & cheese",
+        "category": "mains"
+    },
+    {
+        "plu": "737",
+        "name": "poached salmon",
+        "category": "mains"
+    },
+    {
+        "plu": "749",
+        "name": "fresh catch",
+        "category": "mains"
+    },
+    {
+        "plu": "789",
+        "name": "quiche",
+        "category": "mains",
+        "description": [
+            "Choice of spinach, gruyere and wild mushroom, or a classic Lorrraine quiche,",
+            "paired with a side of fresh cut fruit"
+        ],
+        "varieties": [
+            "spinach gruyere",
+            "lorraine"
+        ]
+    },
+    {
+        "plu": "7909",
+        "name": "quiche + side",
+        "category": "mains",
+        "description": [
+            "Choice of spinach, gruyere and wild mushroom, or a classic Lorrraine quiche,",
+            "paired with a side of fresh cut fruit"
+        ],
+        "varieties": [
+            "spinach gruyere",
+            "lorraine"
+        ],
+        "sides": 1
+    },
+    {
+        "plu": "91007",
+        "name": "crunchy tuna",
+        "category": "sushi"
+    },
+    {
+        "plu": "91008",
+        "name": "crunchy salmon",
+        "category": "sushi"
+    },
+    {
+        "plu": "91009",
+        "name": "crunchy crab",
+        "category": "sushi"
+    },
+    {
+        "plu": "91011",
+        "name": "california",
+        "category": "sushi"
+    },
+    {
+        "plu": "91016",
+        "name": "spicy california",
+        "category": "sushi"
+    },
+    {
+        "plu": "91015",
+        "name": "california + linari",
+        "category": "sushi"
+    },
+    {
+        "plu": "91006",
+        "name": "veggie",
+        "category": "sushi"
+    },
+    {
+        "plu": "91010",
+        "name": "spicy tuna",
+        "category": "sushi"
+    },
+    {
+        "plu": "91012",
+        "name": "six pieces",
+        "category": "sushi"
+    },
+    {
+        "plu": "91013",
+        "name": "hawaiian",
+        "category": "sushi"
+    },
+    {
+        "plu": "91014",
+        "name": "rainbow",
+        "category": "sushi"
+    },
+    {
+        "plu": "755",
+        "name": "hamburger",
+        "category": "grill",
+        "temperature": "medium",
+        "description": [
+            "House ground beef, cheddar, lettuce, tomato, ketchup, mustard,",
+            "on a brioche"
+        ],
+        "ingredients": [
+            "lettuce",
+            "tomato",
+            "ketchup",
+            "mustard"
+        ],
+        "sides": 1,
+        "cheese": "cheddar"
+    },
+    {
+        "plu": "820",
+        "name": "blue cheese burger",
+        "category": "grill",
+        "temperature": "medium",
+        "description": [
+            "House ground beef, blue cheese, sauteéd mushrooms,",
+            "caramelized onions, lettuce, tomato, on a brioche"
+        ],
+        "ingredients": [
+            "blue cheese",
+            "sauteéd mushrooms",
+            "caramelized onions",
+            "lettuce",
+            "tomato"
+        ],
+        "sides": 1,
+        "cheese": "blue"
+    },
+    {
+        "plu": "762",
+        "name": "ny strip",
+        "category": "grill",
+        "temperature": "medium",
+        "sides": 1,
+        "ingredients": [
+            "butter glaze",
+            "seasoning"
+        ]
+    },
+    {
+        "plu": "763",
+        "name": "rib eye",
+        "category": "grill",
+        "temperature": "medium",
+        "sides": 1,
+        "ingredients": [
+            "butter glaze",
+            "seasoning"
+        ]
+    },
+    {
+        "plu": "821",
+        "name": "ribs - half rack",
+        "category": "grill",
+        "temperature": "medium well",
+        "sides": 1,
+        "ingredients": [
+            "bbq sauce"
+        ]
+    },
+    {
+        "plu": "841",
+        "name": "ribs - full rack",
+        "category": "grill",
+        "temperature": "medium well",
+        "sides": 1,
+        "ingredients": [
+            "bbq sauce"
+        ]
+    },
+    {
+        "plu": "816",
+        "name": "pork chop",
+        "category": "grill",
+        "temperature": "medium well",
+        "sides": 1,
+        "ingredients": [
+            "spices",
+            "habanero glaze"
+        ]
+    },
+    {
+        "plu": "817",
+        "name": "two lamb chops",
+        "category": "grill",
+        "temperature": "medium well",
+        "sides": 1,
+        "ingredients": [
+            "spice rub",
+            "herb chimichurri"
+        ]
+    },
+    {
+        "plu": "819",
+        "name": "three lamb chops",
+        "category": "grill",
+        "temperature": "medium well",
+        "sides": 1,
+        "ingredients": [
+            "spice rub",
+            "herb chimichurri"
+        ]
+    },
+    {
+        "plu": "757",
+        "name": "sausage plate",
+        "category": "grill",
+        "temperature": "medium well",
+        "sides": 1,
+        "extra": [
+            "758"
+        ],
+        "ingredients": [
+            "potato salad",
+            "pretzel bun",
+            "sauerkraut",
+            "mustard"
+        ],
+        "optional": [
+            "bratwurst", "chorizo", "chicken jalapeño", "spicy sicilian", "sweet italian"
+        ],
+        "extra": [
+            "842"
+        ]
+    },
+    {
+        "plu": "760",
+        "name": "cornish hen",
+        "category": "grill",
+        "temperature": "medium well",
+        "sides": 1,
+        "ingredients": [
+            "fruit compote"
+        ]
+    },
+    {
+        "plu": "823",
+        "name": "chicken cobb burger",
+        "category": "grill",
+        "temperature": "medium well",
+        "sides": 1,
+        "ingredients": [
+            "smoked bacon",
+            "avocado",
+            "tomato",
+            "lemon dijon vinaigrette"
+        ],
+        "cheese": "blue"
+    },
+    {
+        "plu": "814",
+        "name": "salmon",
+        "category": "grill",
+        "temperature": "medium",
+        "sides": 2,
+        "ingredients": [
+            "seasoning"
+        ]
+    },
+    {
+        "plu": "822",
+        "name": "swordfish",
+        "category": "grill",
+        "temperature": "medium",
+        "sides": 2,
+        "ingredients": [
+        ]
+    },
+    {
+        "plu": "759",
+        "name": "branzino",
+        "category": "grill",
+        "sides": 2,
+        "temperature": "medium well"
+    },
+    {
+        "plu": "756",
+        "name": "ahi tuna burger",
+        "category": "grill",
+        "temperature": "medium",
+        "ingredients": [
+            "slaw",
+            "sriracha"
+        ]
+    },
+    {
+        "plu": "761",
+        "name": "portobello",
+        "category": "grill",
+        "temperature": "medium",
+        "sides": 2,
+        "ingredients": [
+            "evoo marinade",
+            "tomato",
+            "red onion",
+            "pecorino",
+            "baby spinach"
+        ]
+    },
+    {
+        "plu": "813",
+        "name": "veggie burger",
+        "category": "grill",
+        "temperature": "medium well",
+        "sides": 2,
+        "ingredients": [
+            "cheddar",
+            "lettuce",
+            "tomato"
+        ]
+    },
+    {
+        "plu": "824",
+        "name": "tofu",
+        "category": "grill",
+        "temperature": "medium well",
+        "sides": 2,
+        "ingredients": [
+        ]
+    },
+    {
+        "plu": "827",
+        "name": "polenta",
+        "category": "grill",
+        "temperature": "medium well",
+        "sides": 2,
+        "ingredients": [
+            "sauteéd mushrooms",
+            "garlic",
+            "fresh herbs",
+            "parmesan",
+            "spinach"
+        ]
+    },
+    {
+        "plu": "826",
+        "name": "haloumi & vegetables",
+        "category": "grill",
+        "temperature": "medium well",
+        "sides": 2,
+        "ingredients": [
+            "vegetables",
+            "haloumi",
+            "dipping sauces"
+        ]
+    },
+    {
+        "plu": "12133",
+        "name": "chardonnay",
+        "category": "wine"
+    },
+    {
+        "plu": "12141",
+        "name": "côtes du rhône",
+        "category": "wine"
+    },
+    {
+        "plu": "12140",
+        "name": "merlot",
+        "category": "wine"
+    },
+    {
+        "plu": "12131",
+        "name": "pinot noir",
+        "category": "wine"
+    },
+    {
+        "plu": "12134",
+        "name": "rosé",
+        "category": "wine"
+    },
+    {
+        "plu": "12132",
+        "name": "sauvignon blanc",
+        "category": "wine"
+    },
+    {
+        "plu": "843",
+        "name": "mimosa",
+        "category": "wine"
+    },
+    {
+        "plu": "7131",
+        "name": "bottomless mimosa",
+        "category": "wine"
+    }
+]
