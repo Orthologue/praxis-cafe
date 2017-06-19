@@ -3,8 +3,8 @@ import React from 'react'
 import { View, StyleSheet } from 'react-native'
 import { gql, graphql } from 'react-apollo'
 // local imports
-import { baseDim } from '../../quark/styles'
-import { Subtitle, Text, Monospace } from '../../quark'
+import { baseDim, grey1 } from '../../quark/styles'
+import { Subtitle, Text, Monospace, BaseButton } from '../../quark'
 
 const IngredientList = ({children}) => (
     children ? (
@@ -21,7 +21,11 @@ const IngredientList = ({children}) => (
 )
 
 const TicketItem = ({data: { Item, loading, errors }, entry}) => (
-    <View style={styles.container}>
+    <BaseButton
+        defaultColor="white"
+        activeColor={grey1}
+        style={styles.container}
+    >
         <View style={styles.pluContainer}>
             <Monospace style={styles.plu}>
                 {entry.plu}
@@ -65,24 +69,28 @@ const TicketItem = ({data: { Item, loading, errors }, entry}) => (
                 </IngredientList>
             </View>
         )}
-    </View>
+    </BaseButton>
 )
 
 const styles = StyleSheet.create({
     container: {
         display: 'flex',
+        flexGrow: 1,
         flexDirection: 'row',
-        justifyContent: 'space-between',
         padding: 4 * baseDim,
+        height: 'auto',
+        marginLeft: 4,
+        marginRight: 4,
+        alignItems: 'flex-start',
     },
     pluContainer: {
-        flex: 1,
+        flex: 2,
         width: 10,
         justifyContent: 'flex-start',
         alignItems: 'center',
     },
     customizations: {
-        flex: 1,
+        flex: 3,
         width: 10,
     },
     plu: {
