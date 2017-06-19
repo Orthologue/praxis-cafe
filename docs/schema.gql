@@ -14,7 +14,7 @@ type Item implements Node {
   plu: String!
   description: String!
   bread: [String!]
-  temperature: MeatTemperature
+  temperature: String
   salad: [String!]
   extra: [Item!]! @relation(name: "ItemExtras")
   ingredients: [Ingredient!]! @relation(name: "ItemIngredients")
@@ -49,12 +49,4 @@ type User implements Node {
   createdAt: DateTime!
   id: ID! @isUnique
   updatedAt: DateTime!
-}
-
-enum MeatTemperature {
-  WELL
-  MEDIUM_WELL
-  MEDIUM
-  MEDIUM_RARE
-  RARE
 }

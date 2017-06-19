@@ -1,7 +1,7 @@
+// @flow
 // external imports
 import React from 'react'
 import { View, Text , StyleSheet, Image} from 'react-native'
-import { Route, Switch, Redirect } from 'react-router-native'
 import { connect } from 'react-redux'
 import { App, H3 } from '../quark'
 import { AppBar } from '../quark/native'

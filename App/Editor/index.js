@@ -1,9 +1,9 @@
+// @flow
 // external imports
 import React from 'react'
 import { View, ScrollView, Text } from 'react-native'
 import { connect } from 'react-redux'
 import { graphql, gql } from 'react-apollo'
-import { Map } from 'immutable'
 // local imports
 import styles from './styles'
 import IngredientControl from './IngredientControl'

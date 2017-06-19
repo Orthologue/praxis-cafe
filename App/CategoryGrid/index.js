@@ -1,3 +1,4 @@
+// @flow
 // external imports
 import React, { PureComponent } from 'react'
 import { View, Text, FlatList, ScrollView, Modal, Animated } from 'react-native'
@@ -5,7 +6,6 @@ import { TabBar, TabView, Tab } from '../../quark/native'
 import { Button } from '../../quark'
 import { Route, Link } from 'react-router-native'
 import { gql, graphql } from 'react-apollo'
-import { TabViewAnimated } from 'react-native-tab-view'
 import _ from 'lodash'
 // local imports
 import Editor from '../Editor'

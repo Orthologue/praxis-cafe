@@ -1,3 +1,4 @@
+// @flow
 // external imports
 import React, { PureComponent } from 'react'
 import { View, Text, StyleSheet, TouchableWithoutFeedback, Modal, Animated, ScrollView } from 'react-native'
