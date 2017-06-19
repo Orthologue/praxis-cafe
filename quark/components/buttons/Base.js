@@ -17,7 +17,7 @@ class BaseButton extends React.Component {
         this.setState({
             animation: Animated.timing(this.state.opacity, {
                 toValue: 1,
-                duration: 125,
+                duration: 100,
             })
         }, () => {
             // start the animation
