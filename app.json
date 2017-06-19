@@ -1,5 +1,7 @@
 {
   "expo": {
-    "sdkVersion": "17.0.0"
+    "sdkVersion": "17.0.0",
+    "name": "Cafe",
+    "icon": "https://avatars3.githubusercontent.com/u/28851524?v=3&s=200"
   }
 }
