@@ -1,24 +1,11 @@
-const SET_VIEW = 'SET_VIEW'
 const ADD_ITEM = 'ADD_ITEM'
-const SELECT_ITEM = 'SELECT_ITEM'
-
-export const setView = (path, config) => ({
-    type: SET_VIEW,
-    payload: { path, config },
-})
 
 export const addItem = item => ({
     type: ADD_ITEM,
     payload: item
 })
 
-export const selectItem = id => ({
-    type: SELECT_ITEM,
-    payload: id
-})
-
 const initialState = {
-    selectedItem: null,
     items: [],
 }
 
@@ -36,15 +23,6 @@ export default (state = initialState, {type, payload}) => {
                     ...payload,
                 }
             ]
-        }
-    }
-
-    // if we are selecting an item from the ticket
-    if (type === SELECT_ITEM) {
-        return {
-            ...state,
-            // track the id internally
-            selected: payload,
         }
     }
 
