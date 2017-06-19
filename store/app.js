@@ -1,5 +1,6 @@
 const SET_VIEW = 'SET_VIEW'
 const ADD_ITEM = 'ADD_ITEM'
+const SELECT_ITEM = 'SELECT_ITEM'
 
 export const setView = (path, config) => ({
     type: SET_VIEW,
@@ -11,12 +12,44 @@ export const addItem = item => ({
     payload: item
 })
 
+export const selectItem = id => ({
+    type: SELECT_ITEM,
+    payload: id
+})
+
 const initialState = {
-    view: {
-        path: '',
-        config: {},
-    },
+    selectedItem: null,
     items: [],
+}
+
+export default (state = initialState, {type, payload}) => {
+    // if we are adding an item to the ticket
+    if (type === ADD_ITEM) {
+        return {
+            ...state,
+            items: [
+                ...state.items,
+                // add the payload to the end of the items
+                {
+                    // make sure it has a unique id
+                    id: generateItemId(state),
+                    ...payload,
+                }
+            ]
+        }
+    }
+
+    // if we are selecting an item from the ticket
+    if (type === SELECT_ITEM) {
+        return {
+            ...state,
+            // track the id internally
+            selected: payload,
+        }
+    }
+
+    // its an action we don't recognize, don't do anything
+    return state
 }
 
 // generate a unique item id
@@ -31,27 +64,4 @@ const generateItemId = state => {
     }
 
     return candidate
-}
-
-export default (state = initialState, {type, payload}) => {
-    if (type === SET_VIEW) {
-        return {
-            ...state,
-            view: payload
-        }
-    }
-    if (type === ADD_ITEM) {
-        return {
-            ...state,
-            items: [
-                ...state.items,
-                {
-                    id: generateItemId(state),
-                    ...payload,
-                }
-            ]
-        }
-    }
-
-    return state
 }
