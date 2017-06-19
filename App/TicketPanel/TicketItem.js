@@ -79,8 +79,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         padding: 4 * baseDim,
         height: 'auto',
-        marginLeft: 4,
-        marginRight: 4,
         alignItems: 'flex-start',
     },
     pluContainer: {

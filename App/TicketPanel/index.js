@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     container: {
         display: 'flex',
         flexDirection: 'column',
-        width: 62 * baseDim,
+        width: 60 * baseDim,
         borderRightColor: grey2,
         borderRightWidth: 1,
         borderStyle: 'solid',
