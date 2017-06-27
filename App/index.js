@@ -2,7 +2,6 @@
 import React from 'react'
 import { View, Text , StyleSheet, Image} from 'react-native'
 import { Route, Switch, Redirect } from 'react-router-native'
-import { connect } from 'react-redux'
 import { App, H3 } from '../quark'
 import { AppBar } from '../quark/native'
 // local imports
@@ -11,13 +10,7 @@ import TicketPanel from './TicketPanel'
 import CategoryGrid from './CategoryGrid'
 import Editor from './Editor'
 
-const selector = ({app: { view }}) => ({view})
-
-const RootView = connect(selector)(({view = {}}) => {
-    // the component to show depends on the view path
-    const Component = {
-    // the default view is the grid
-    }[view.path] || CategoryGrid
+const RootView = () => {
 
     return (
         <Provider>
@@ -35,12 +28,12 @@ const RootView = connect(selector)(({view = {}}) => {
                 </AppBar>
                 <View style={styles.content}>
                     <TicketPanel />
-                    <Component />
+                    <CategoryGrid />
                 </View>
             </App>
         </Provider>
     )
-})
+}
 
 const styles = StyleSheet.create({
     branding: {

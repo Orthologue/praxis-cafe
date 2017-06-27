@@ -18,6 +18,7 @@ export const clearSelection = () => ({
 
 const initialState = {
     items: [],
+    selected: null,
 }
 
 export default (state = initialState, {type, payload}) => {
