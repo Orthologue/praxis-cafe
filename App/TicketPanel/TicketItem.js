@@ -2,29 +2,30 @@
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
 import { gql, graphql } from 'react-apollo'
+import { connect } from 'react-redux'
 // local imports
 import { baseDim, grey1 } from '../../quark/styles'
 import { Subtitle, Text, Monospace, BaseButton } from '../../quark'
+import { selectItem as select } from '../../store'
 
-const IngredientList = ({children}) => (
-    children ? (
-        <View>
-            {children.map((extra, key) => (
-                <View style={styles.ingredientContainer} key={key}>
-                    <Text>
-                        {extra}
-                    </Text>
-                </View>
-            ))}
-        </View>
-    ) : null
+const IngredientList = ({children}) => children && (
+    <View>
+        {children.map((extra, key) => (
+            <View style={styles.ingredientContainer} key={key}>
+                <Text>
+                    {extra}
+                </Text>
+            </View>
+        ))}
+    </View>
 )
 
-const TicketItem = ({data: { Item, loading, errors }, entry}) => (
+const TicketItem = ({data: { Item, loading, errors }, selectItem, entry}) => (
     <BaseButton
         defaultColor="white"
         activeColor={grey1}
         style={styles.container}
+        onPress={() => selectItem(entry.id)}
     >
         <View style={styles.pluContainer}>
             <Monospace style={styles.plu}>
@@ -109,6 +110,12 @@ const query = gql`
     }
 `
 
+const mapDispatchToProps = dispatch => ({
+    selectItem: id => dispatch(select(id)),
+})
+
+const Connected = connect(null, mapDispatchToProps)(TicketItem)
+
 export default graphql(query, {
     options: ({entry}) => ({variables: {plu: entry.plu}})
-})(TicketItem)
+})(Connected)
