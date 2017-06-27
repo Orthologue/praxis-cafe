@@ -1,8 +1,19 @@
 const ADD_ITEM = 'ADD_ITEM'
+const SELECT_ITEM = 'SELECT_ITEM'
+const CLEAR_SELECTION = 'CLEAR_SELECTION'
 
 export const addItem = item => ({
     type: ADD_ITEM,
     payload: item
+})
+
+export const selectItem = id => ({
+    type: SELECT_ITEM,
+    payload: id,
+})
+
+export const clearSelection = () => ({
+    type: CLEAR_SELECTION,
 })
 
 const initialState = {
@@ -23,6 +34,22 @@ export default (state = initialState, {type, payload}) => {
                     ...payload,
                 }
             ]
+        }
+    }
+
+    // if we need to select a particular item
+    if (type === SELECT_ITEM) {
+        return {
+            ...state,
+            selected: payload,
+        }
+    }
+
+    // if we need to clear the selection
+    if (type === CLEAR_SELECTION) {
+        return {
+            ...state,
+            selected: null,
         }
     }
 
